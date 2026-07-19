@@ -266,6 +266,40 @@
     color: #777;
     font-size: 0.85rem;
   }
+
+  /* --- essay section (church history context) --- */
+  .essay-section {
+    max-width: 820px;
+  }
+  .essay-section h3 {
+    font-size: 1.2rem;
+    margin: 30px 0 8px;
+    color: var(--ink);
+  }
+  .essay-section h3:first-of-type { margin-top: 10px; }
+  .essay-section p {
+    margin: 0 0 14px;
+    font-size: 0.98rem;
+    color: #333;
+  }
+  .essay-section a {
+    color: var(--inheritance);
+    text-decoration: underline;
+  }
+  .essay-section a:hover { color: var(--byzantium); }
+  .essay-sources {
+    font-size: 0.85rem !important;
+    color: #666 !important;
+    border-top: 1px solid #ddd;
+    padding-top: 14px;
+    margin-top: 22px !important;
+    line-height: 1.8;
+  }
+  .essay-sources a { color: #555; }
+  .inline-jump {
+    font-size: 0.78rem !important;
+    margin-top: 6px !important;
+  }
 </style>
 </head>
 <body>
@@ -916,6 +950,7 @@
         <span class="card-tag tag-byzantium">Byzantium</span>
         <h4>The Great Schism</h4>
         <p>Mutual excommunications between Rome and Constantinople formalize the lasting split between Catholic and Orthodox churches.</p>
+        <p class="shared-note inline-jump"><a href="#faith-and-empire">Why the churches split, and what it cost each empire ↓</a></p>
       </div>
     </div>
     <div class="lane-cell"></div>
@@ -971,8 +1006,39 @@
   </div>
 </div>
 
+<section class="book-section essay-section" id="faith-and-empire">
+  <h2 class="book-title">III. Faith and Empire — How the Churches Diverged</h2>
+  <p class="book-sub">None of the four books above is really about the churches themselves, so this section draws on outside sources — linked throughout — to explain why Rome and Constantinople ended up with two different Christianities, and what that difference cost each empire.</p>
+
+  <h3>A slow theological rift</h3>
+  <p>By the time Charlemagne was crowned in 800, the Christian churches of Rome and Constantinople had been drifting apart for centuries over more than politics. The Western church kept its liturgy in Latin while the Eastern church kept Greek, and doctrine developed along with each language. Rome, on its own authority, added the word <em>Filioque</em> ("and the Son") to the Nicene Creed, asserting that the Holy Spirit proceeds from both the Father and the Son; Constantinople rejected the addition as both theologically wrong and an unauthorized change to a text fixed by ecumenical council. Married clergy, the use of leavened versus unleavened bread in the Eucharist, and fasting rules were smaller but real irritants alongside it — see <a href="https://www.britannica.com/event/East-West-Schism-1054" target="_blank" rel="noopener">Britannica's overview of the East–West Schism</a> and <a href="https://en.wikipedia.org/wiki/East%E2%80%93West_Schism" target="_blank" rel="noopener">Wikipedia's fuller account</a> for the complete list.</p>
+  <p>The two churches also disagreed about who was in charge. Rome claimed the pope held universal jurisdiction over all Christians as the successor of Saint Peter; Constantinople held that authority was shared among the empire's great patriarchates — Constantinople, Alexandria, Antioch, and Jerusalem, plus Rome itself until 1054 — meeting in council, a model historians call the pentarchy. Mutual excommunications in 1054 made the split official, though it had been building for a long time and many contemporaries didn't treat it as final until the sack of Constantinople in 1204. <a href="https://study.com/academy/lesson/the-great-schism-between-the-east-and-western-churches.html" target="_blank" rel="noopener">This summary from Study.com</a> walks through how gradual the process actually was.</p>
+
+  <h3>Two models of church and state</h3>
+  <p>The deeper difference was structural. In Byzantium, emperor and church were meant to work in what Justinian called a "symphonia" — harmony between imperial and priestly power — but in practice the emperor set most of the terms: he could install or remove the Patriarch of Constantinople and presided over the church councils that settled doctrine. Western writers later called this caesaropapism, though the term appears nowhere in Byzantine sources, and historians now argue it oversimplifies a relationship in which emperors still depended on the church for legitimacy. See <a href="https://en.wikipedia.org/wiki/Caesaropapism" target="_blank" rel="noopener">Wikipedia's entry on caesaropapism</a> and this <a href="https://www.cambridge.org/core/journals/church-history/article/abs/church-and-state-in-the-byzantine-empire-a-reconsideration-of-the-problem-of-caesaropapism/157E213F7321C56DCF22E860A6450D4D" target="_blank" rel="noopener">Cambridge Core reassessment of the concept</a>.</p>
+  <p>In the Latin west, the papacy grew into a separate, and eventually rival, center of power. Popes crowned emperors — as Leo III crowned Charlemagne in 800, on the timeline above — which implied the reverse could be argued too: that imperial authority depended on the church's blessing. That argument came to a head in the Investiture Controversy of the late 11th century, when Pope Gregory VII insisted that only the church, not kings or emperors, had the right to appoint bishops. His standoff with the German king Henry IV escalated to excommunication and Henry's famous penance at Canossa, and was only partly resolved by the Concordat of Worms in 1122. See the <a href="https://www.worldhistory.org/Investiture_Controversy/" target="_blank" rel="noopener">World History Encyclopedia's account of the Investiture Controversy</a> and <a href="https://www.britannica.com/event/Investiture-Controversy" target="_blank" rel="noopener">Britannica's entry</a>.</p>
+
+  <h3>How it shaped each empire</h3>
+  <p>Because the Byzantine emperor's authority and the church's were so tightly bound together, a religious dispute could become a state crisis. The Iconoclast Controversy (726–787 and 815–843, already on the timeline above) was exactly that: a fight over whether religious images were idolatry that split the empire for over a century, provoked riots and persecutions, and — because iconoclasm drew more support from the empire's poorer eastern provinces than from Greece and Italy — widened existing regional and social divides. See <a href="https://www.medievalists.net/2026/05/iconoclasm-byzantine-empire/" target="_blank" rel="noopener">Medievalists.net's account of the controversy</a> and <a href="https://www.britannica.com/place/Byzantine-Empire/The-age-of-Iconoclasm-717-867" target="_blank" rel="noopener">Britannica's overview of the Iconoclast era</a>.</p>
+  <p>Iconoclasm also had consequences well outside Byzantium. Rome rejected the ban on icons, and the resulting estrangement between the pope and an iconoclast emperor in Constantinople is one reason the papacy started looking west, to the Franks, for military protection instead of east, to an emperor it no longer fully trusted on doctrine. That reorientation runs in a fairly straight line to Pippin's alliance with the papacy in 751 and Charlemagne's coronation in 800 — both already on the parallel timeline above. A dispute over theology, in other words, helped produce a second Roman emperor in the west.</p>
+  <p>In the west, the church's separateness from royal power cut the other way. Rather than one crisis destabilizing one throne, Latin Christendom ended up with two competing hierarchies — kings and popes — each claiming ultimate authority, which produced centuries of low-grade conflict but also meant no single ruler could fully absorb the church the way Constantinople's emperors effectively could. That balance of power is part of why the papacy outlived every western empire built on top of it, while the fortunes of the Byzantine church rose and fell with the throne in Constantinople itself.</p>
+
+  <p class="essay-sources">
+    <strong>Sources:</strong><br>
+    <a href="https://www.britannica.com/event/East-West-Schism-1054" target="_blank" rel="noopener">Britannica — East-West Schism</a><br>
+    <a href="https://en.wikipedia.org/wiki/East%E2%80%93West_Schism" target="_blank" rel="noopener">Wikipedia — East–West Schism</a><br>
+    <a href="https://study.com/academy/lesson/the-great-schism-between-the-east-and-western-churches.html" target="_blank" rel="noopener">Study.com — The Great Schism of 1054</a><br>
+    <a href="https://en.wikipedia.org/wiki/Caesaropapism" target="_blank" rel="noopener">Wikipedia — Caesaropapism</a><br>
+    <a href="https://www.cambridge.org/core/journals/church-history/article/abs/church-and-state-in-the-byzantine-empire-a-reconsideration-of-the-problem-of-caesaropapism/157E213F7321C56DCF22E860A6450D4D" target="_blank" rel="noopener">Cambridge Core — Church and State in the Byzantine Empire</a><br>
+    <a href="https://www.worldhistory.org/Investiture_Controversy/" target="_blank" rel="noopener">World History Encyclopedia — Investiture Controversy</a><br>
+    <a href="https://www.britannica.com/event/Investiture-Controversy" target="_blank" rel="noopener">Britannica — Investiture Controversy</a><br>
+    <a href="https://www.medievalists.net/2026/05/iconoclasm-byzantine-empire/" target="_blank" rel="noopener">Medievalists.net — Iconoclasm and the Byzantine Empire</a><br>
+    <a href="https://www.britannica.com/place/Byzantine-Empire/The-age-of-Iconoclasm-717-867" target="_blank" rel="noopener">Britannica — The Age of Iconoclasm, 717–867</a>
+  </p>
+</section>
+
 <footer>
-  Timeline compiled from Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em>, John Julius Norwich's <em>A Short History of Byzantium</em>, and Alessandro Barbero's <em>Charlemagne: Father of a Continent</em>.
+  Timeline compiled from Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em>, John Julius Norwich's <em>A Short History of Byzantium</em>, and Alessandro Barbero's <em>Charlemagne: Father of a Continent</em>, with additional context on church history linked above.
 </footer>
 
 </body>
