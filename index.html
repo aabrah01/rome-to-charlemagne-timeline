@@ -34,7 +34,7 @@
     letter-spacing: 1px;
   }
   header p {
-    max-width: 640px;
+    max-width: 680px;
     margin: 0 auto;
     font-style: italic;
     color: #555;
@@ -64,7 +64,7 @@
     display: inline-block;
   }
   .book-section {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 50px 20px 10px;
   }
@@ -76,7 +76,10 @@
     color: #666;
     font-size: 0.95rem;
     margin-bottom: 30px;
+    max-width: 800px;
   }
+
+  /* --- single-lane timeline (SPQR) --- */
   .timeline {
     position: relative;
     max-width: 900px;
@@ -146,12 +149,116 @@
   }
   .spqr .marker { background: var(--spqr); }
   .spqr .card { border-left-color: var(--spqr); }
-  .inheritance .marker { background: var(--inheritance); }
-  .inheritance .card { border-left-color: var(--inheritance); }
-  .byzantium .marker { background: var(--byzantium); }
-  .byzantium .card { border-left-color: var(--byzantium); }
-  .charlemagne .marker { background: var(--charlemagne); }
-  .charlemagne .card { border-left-color: var(--charlemagne); }
+
+  /* --- parallel swimlane timeline (Inheritance / Byzantium / Charlemagne) --- */
+  .swimlane-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+  }
+  .swimlane-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr;
+    column-gap: 14px;
+    row-gap: 14px;
+  }
+  .lane-heading {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ddd;
+    color: #555;
+  }
+  .lane-heading.inheritance-h { color: var(--inheritance); border-color: var(--inheritance); }
+  .lane-heading.byzantium-h { color: var(--byzantium); border-color: var(--byzantium); }
+  .lane-heading.charlemagne-h { color: var(--charlemagne); border-color: var(--charlemagne); }
+
+  .beat-year {
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #444;
+    text-align: right;
+    padding-top: 14px;
+    white-space: nowrap;
+  }
+  .lane-cell {
+    min-height: 4px;
+  }
+  .lane-card {
+    background: var(--paper);
+    border-radius: 6px;
+    padding: 12px 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-left: 4px solid #ccc;
+  }
+  .lane-card h4 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+  }
+  .lane-card p {
+    margin: 0;
+    font-size: 0.87rem;
+    color: #333;
+  }
+  .card-tag {
+    display: none;
+  }
+  .shared-note {
+    margin-top: 6px !important;
+    font-size: 0.78rem !important;
+    font-style: italic;
+    color: #777 !important;
+  }
+  .lane-cell.inheritance .lane-card { border-left-color: var(--inheritance); }
+  .lane-cell.byzantium .lane-card { border-left-color: var(--byzantium); }
+  .lane-cell.charlemagne .lane-card { border-left-color: var(--charlemagne); }
+
+  .lane-cell.linked .lane-card {
+    border-left-width: 4px;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .beat-year.linked-year {
+    color: var(--ink);
+    position: relative;
+  }
+  .beat-year.linked-year::after {
+    content: '⇄';
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+    text-align: right;
+  }
+
+  @media (max-width: 800px) {
+    .swimlane-grid {
+      grid-template-columns: 1fr;
+    }
+    .lane-heading { display: none; }
+    .beat-year {
+      text-align: left;
+      padding: 18px 0 2px;
+      border-top: 1px solid #ddd;
+      margin-top: 6px;
+    }
+    .beat-year:first-of-type { border-top: none; margin-top: 0; }
+    .lane-cell:empty { display: none; }
+    .card-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .tag-inheritance { background: var(--inheritance); }
+    .tag-byzantium { background: var(--byzantium); }
+    .tag-charlemagne { background: var(--charlemagne); }
+  }
 
   footer {
     text-align: center;
@@ -165,7 +272,7 @@
 
 <header>
   <h1>Rome to Charlemagne</h1>
-  <p>A timeline through four histories: Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em> (which follows both the Franks in the west and Byzantium in the east across the same centuries), John Julius Norwich's <em>A Short History of Byzantium</em>, and Alessandro Barbero's <em>Charlemagne: Father of a Continent</em> — from the founding of Rome to the making of medieval Europe.</p>
+  <p>A timeline through four histories: Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em> (which follows both the Franks in the west and Byzantium in the east across the same centuries), John Julius Norwich's <em>A Short History of Byzantium</em>, and Alessandro Barbero's <em>Charlemagne: Father of a Continent</em>. Where two books describe the same moment, their entries sit side by side at the same point in time, in separate lanes.</p>
 </header>
 
 <div class="legend">
@@ -177,7 +284,7 @@
 
 <section class="book-section">
   <h2 class="book-title">I. SPQR — The Rise and Rule of Rome</h2>
-  <p class="book-sub">Mary Beard's history of Rome from its legendary founding to the extension of citizenship across the empire.</p>
+  <p class="book-sub">Mary Beard's history of Rome from its legendary founding to the extension of citizenship across the empire. No other book in this set covers this period, so it runs as a single track.</p>
 </section>
 <div class="timeline">
 
@@ -337,423 +444,531 @@
 </div>
 
 <section class="book-section">
-  <h2 class="book-title">II. The Inheritance of Rome — Europe After the Fall</h2>
-  <p class="book-sub">Chris Wickham's account of how Rome's collapse in the west reshaped Europe and the Mediterranean world, c. 400–1000 AD — tracking the Franks and other western successor kingdoms alongside the surviving Roman state in the east, Byzantium, across the same centuries.</p>
+  <h2 class="book-title">II. Parallel Histories — The Inheritance of Rome, Byzantium, and Charlemagne</h2>
+  <p class="book-sub">From c. 300 AD, three books cover overlapping ground from different vantage points: Wickham's <em>Inheritance of Rome</em> tracks both the Frankish west and Byzantine east, Norwich's <em>Short History of Byzantium</em> stays fixed on Constantinople through 1453, and Barbero's <em>Charlemagne</em> zooms into one Frankish reign, 742–814. Where two books describe the same event, it appears twice — once per lane — at the same row, marked with ⇄.</p>
 </section>
-<div class="timeline">
 
-  <div class="event inheritance">
-    <div class="year">AD 312</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Constantine's Conversion</h3>
-      <p>Constantine wins the Battle of the Milvian Bridge and begins the empire's turn toward Christianity.</p>
+<div class="swimlane-wrap">
+  <div class="swimlane-grid">
+
+    <div></div>
+    <div class="lane-heading inheritance-h">The Inheritance of Rome</div>
+    <div class="lane-heading byzantium-h">A Short History of Byzantium</div>
+    <div class="lane-heading charlemagne-h">Charlemagne: Father of a Continent</div>
+
+    <!-- AD 312 -->
+    <div class="beat-year">AD 312</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Constantine's Conversion</h4>
+        <p>Constantine wins the Battle of the Milvian Bridge and begins the empire's turn toward Christianity.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 330</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Founding of Constantinople</h3>
-      <p>Constantine dedicates his new capital in the east, shifting the empire's center of gravity and setting up centuries of divergence between Latin west and Greek east.</p>
+    <!-- AD 330 - shared -->
+    <div class="beat-year linked-year">AD 330</div>
+    <div class="lane-cell inheritance linked">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Founding of Constantinople</h4>
+        <p>Constantine dedicates his new capital in the east, shifting the empire's center of gravity.</p>
+        <p class="shared-note">⇄ Same event — also opens the Byzantium timeline, at right.</p>
+      </div>
     </div>
-  </div>
-
-  <div class="event inheritance">
-    <div class="year">AD 376–410</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Gothic Migration and the Sack of Rome</h3>
-      <p>Pressed by the Huns, Gothic groups cross into the empire; in 410 Alaric's Visigoths sack Rome itself, a profound shock to the Roman world.</p>
+    <div class="lane-cell byzantium linked">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Constantinople Dedicated</h4>
+        <p>Constantine dedicates his "New Rome" on the site of Byzantium — the city that gives this empire its modern name.</p>
+        <p class="shared-note">⇄ Same event — Wickham covers it from the Roman west's perspective, at left.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 451</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Battle of the Catalaunian Plains</h3>
-      <p>A Roman-Gothic coalition halts Attila the Hun's advance into Gaul.</p>
+    <!-- AD 376-410 -->
+    <div class="beat-year">AD 376–410</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Gothic Migration and the Sack of Rome</h4>
+        <p>Pressed by the Huns, Gothic groups cross into the empire; in 410 Alaric's Visigoths sack Rome itself.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 476</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Deposition of Romulus Augustulus</h3>
-      <p>The Germanic general Odoacer deposes the last western Roman emperor. Wickham treats this as a marker rather than a sudden rupture — Roman institutions and culture persist for generations.</p>
+    <!-- AD 395 -->
+    <div class="beat-year">AD 395</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Permanent Division of the Empire</h4>
+        <p>On the death of Theodosius I, the empire splits between his two sons and is never reunited.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 493</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Theoderic's Ostrogothic Kingdom in Italy</h3>
-      <p>Theoderic the Great establishes a Gothic kingdom that consciously preserves Roman administration and culture.</p>
+    <!-- AD 451 -->
+    <div class="beat-year">AD 451</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Battle of the Catalaunian Plains</h4>
+        <p>A Roman-Gothic coalition halts Attila the Hun's advance into Gaul.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 527–565</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Justinian's Reign and Reconquest</h3>
-      <p>The eastern emperor Justinian codifies Roman law and attempts to reconquer the west, including Italy and North Africa, at devastating cost.</p>
+    <!-- AD 476 -->
+    <div class="beat-year">AD 476</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Deposition of Romulus Augustulus</h4>
+        <p>Odoacer deposes the last western Roman emperor. Wickham treats this as a marker, not a sudden rupture.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 568</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Lombard Invasion of Italy</h3>
-      <p>The Lombards enter Italy and establish a kingdom, fragmenting the peninsula for centuries.</p>
+    <!-- AD 493 -->
+    <div class="beat-year">AD 493</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Theoderic's Ostrogothic Kingdom</h4>
+        <p>Theoderic the Great establishes a Gothic kingdom in Italy that consciously preserves Roman culture.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 622</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>The Hijra and Rise of Islam</h3>
-      <p>Muhammad's migration to Medina marks the start of the Islamic calendar; within decades Arab armies overrun the Byzantine and Sasanian east.</p>
+    <!-- AD 527-532 - shared -->
+    <div class="beat-year linked-year">AD 527–532</div>
+    <div class="lane-cell inheritance linked">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Justinian's Reign and Reconquest</h4>
+        <p>The eastern emperor Justinian codifies Roman law and attempts to reconquer the west, at devastating cost.</p>
+        <p class="shared-note">⇄ Same reign — Norwich narrates its opening crisis at right.</p>
+      </div>
     </div>
-  </div>
-
-  <div class="event inheritance">
-    <div class="year">AD 632–711</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Islamic Expansion Across the Mediterranean</h3>
-      <p>Arab conquests sweep across the Levant, North Africa, and finally Visigothic Spain, transforming the political map Rome once unified.</p>
+    <div class="lane-cell byzantium linked">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>The Nika Riots</h4>
+        <p>Rioting factions nearly topple Justinian; urged on by Empress Theodora, he crushes the revolt and rebuilds the city.</p>
+        <p class="shared-note">⇄ Same reign as Wickham's account, at left.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 664</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Synod of Whitby</h3>
-      <p>The Northumbrian church adopts Roman rather than Celtic Christian practice, tying Anglo-Saxon England more closely to continental Christendom.</p>
+    <!-- AD 537 -->
+    <div class="beat-year">AD 537</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Hagia Sophia Completed</h4>
+        <p>Justinian's great domed cathedral is dedicated, the largest church in the world for centuries.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 711–718</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Fall of Visigothic Spain</h3>
-      <p>Umayyad forces conquer most of the Iberian peninsula, ending Visigothic rule and beginning centuries of al-Andalus.</p>
+    <!-- AD 568 -->
+    <div class="beat-year">AD 568</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Lombard Invasion of Italy</h4>
+        <p>The Lombards enter Italy and establish a kingdom, fragmenting the peninsula for centuries.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 751</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Pippin the Short Becomes King</h3>
-      <p>The Carolingian mayor of the palace deposes the last Merovingian king with papal sanction, founding the Carolingian dynasty.</p>
+    <!-- AD 622 -->
+    <div class="beat-year">AD 622</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>The Hijra and Rise of Islam</h4>
+        <p>Muhammad's migration to Medina marks the start of the Islamic calendar.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 800</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Coronation of Charlemagne</h3>
-      <p>Pope Leo III crowns Charlemagne emperor in Rome — a symbolic revival of the western empire, and the moment where this history overlaps with Barbero's biography below.</p>
+    <!-- AD 626 -->
+    <div class="beat-year">AD 626</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Constantinople Withstands Siege</h4>
+        <p>A combined Avar and Persian siege fails to take the capital, preserving the empire at one of its lowest points.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">AD 843</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Treaty of Verdun</h3>
-      <p>Charlemagne's grandsons divide the Carolingian Empire into three kingdoms, laying the ground for the future shapes of France and Germany.</p>
+    <!-- AD 632-698 - shared -->
+    <div class="beat-year linked-year">AD 632–698</div>
+    <div class="lane-cell inheritance linked">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Islamic Expansion Across the Mediterranean</h4>
+        <p>Arab conquests sweep across the Levant, North Africa, and finally Visigothic Spain.</p>
+        <p class="shared-note">⇄ Same conquests, seen from Constantinople at right.</p>
+      </div>
     </div>
-  </div>
-
-  <div class="event inheritance">
-    <div class="year">AD 962</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Otto I Crowned Holy Roman Emperor</h3>
-      <p>The German king Otto I is crowned emperor in Rome, founding the line that becomes the Holy Roman Empire.</p>
+    <div class="lane-cell byzantium linked">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Loss of the Eastern and African Provinces</h4>
+        <p>The same Arab armies strip Byzantium of Syria, Palestine, Egypt, and North Africa, shrinking the empire permanently.</p>
+        <p class="shared-note">⇄ Same conquests as Wickham's account, at left.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event inheritance">
-    <div class="year">c. AD 1000</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>A New Political Landscape</h3>
-      <p>By the year 1000, Wickham's narrative closes on a Europe of feudal lordships, emerging kingdoms, and a Latin Christendom distinct from both Byzantium and the Islamic world.</p>
+    <!-- AD 664 -->
+    <div class="beat-year">AD 664</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Synod of Whitby</h4>
+        <p>Northumbria adopts Roman rather than Celtic Christian practice, tying England to continental Christendom.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-</div>
-
-<section class="book-section">
-  <h2 class="book-title">III. A Short History of Byzantium — The Eastern Empire</h2>
-  <p class="book-sub">John Julius Norwich's account of the Roman state that never fell in 476 — the Greek-speaking, Christian empire ruled from Constantinople until 1453.</p>
-</section>
-<div class="timeline">
-
-  <div class="event byzantium">
-    <div class="year">AD 330</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Constantinople Dedicated</h3>
-      <p>Constantine dedicates his "New Rome" on the site of Byzantium — the city that gives this empire its modern name and will serve as its capital for over a thousand years.</p>
+    <!-- AD 674-718 -->
+    <div class="beat-year">AD 674–718</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>The Great Arab Sieges of Constantinople</h4>
+        <p>Twice the Umayyad Caliphate besieges the capital; twice it is repelled, aided by the secret weapon Greek fire.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event byzantium">
-    <div class="year">AD 395</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Permanent Division of the Empire</h3>
-      <p>On the death of Theodosius I, the empire splits between his two sons and is never reunited — the eastern half survives while the western half collapses within a century.</p>
+    <!-- AD 711-718 -->
+    <div class="beat-year">AD 711–718</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Fall of Visigothic Spain</h4>
+        <p>Umayyad forces conquer most of Iberia, ending Visigothic rule and beginning centuries of al-Andalus.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event byzantium">
-    <div class="year">AD 532</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>The Nika Riots</h3>
-      <p>Chariot-racing factions nearly topple Justinian in a week of rioting that burns much of Constantinople; Justinian, urged on by Empress Theodora, crushes the revolt and rebuilds the city.</p>
+    <!-- AD 730-843 -->
+    <div class="beat-year">AD 730–843</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>The Iconoclast Controversy</h4>
+        <p>Two long periods of imperial policy ban the veneration of religious images before icons are permanently restored.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event byzantium">
-    <div class="year">AD 537</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Hagia Sophia Completed</h3>
-      <p>Justinian's great domed cathedral is dedicated, an architectural statement of imperial and Christian ambition that stands for centuries as the largest church in the world.</p>
+    <!-- c. 742 -->
+    <div class="beat-year">c. 742</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Birth of Charlemagne</h4>
+        <p>Charles is born to Pippin the Short, grandson of the great Frankish leader Charles Martel.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event byzantium">
-    <div class="year">AD 626</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Constantinople Withstands Siege</h3>
-      <p>A combined Avar and Persian siege fails to take the capital, preserving the empire at one of its lowest points.</p>
+    <!-- AD 751 -->
+    <div class="beat-year">AD 751</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Pippin the Short Becomes King</h4>
+        <p>Charlemagne's father deposes the last Merovingian king with papal sanction, founding the Carolingian dynasty.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event byzantium">
-    <div class="year">AD 636–698</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Loss of the Eastern and African Provinces</h3>
-      <p>Arab armies strip Byzantium of Syria, Palestine, Egypt, and eventually North Africa, permanently shrinking the empire to Anatolia and the Balkans.</p>
+    <!-- AD 768 -->
+    <div class="beat-year">AD 768</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Becomes King of the Franks</h4>
+        <p>On Pippin's death, the kingdom is divided between Charlemagne and his brother Carloman.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event byzantium">
-    <div class="year">AD 674–678 & 717–718</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>The Great Arab Sieges of Constantinople</h3>
-      <p>Twice the Umayyad Caliphate besieges the capital by land and sea; twice it is repelled, aided by the secret incendiary weapon known as Greek fire.</p>
+    <!-- AD 771 -->
+    <div class="beat-year">AD 771</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Sole Rule</h4>
+        <p>Carloman dies and Charlemagne becomes sole king of the Franks.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event byzantium">
-    <div class="year">AD 730–787 & 815–843</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>The Iconoclast Controversy</h3>
-      <p>Two long periods of imperial policy ban the veneration of religious images, convulsing Byzantine religious and political life before icon veneration is permanently restored in 843.</p>
+    <!-- AD 772-804 -->
+    <div class="beat-year">AD 772–804</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>The Saxon Wars</h4>
+        <p>A brutal, decades-long campaign subdues and forcibly Christianizes the Saxons, including the mass execution at Verden in 782.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event byzantium">
-    <div class="year">AD 863</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Mission of Cyril and Methodius</h3>
-      <p>Byzantine missionary brothers are sent to convert the Slavs, devising the script that becomes Cyrillic and spreading Orthodox Christianity across Eastern Europe.</p>
+    <!-- AD 774 -->
+    <div class="beat-year">AD 774</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Conquest of the Lombard Kingdom</h4>
+        <p>Charlemagne defeats the Lombards in Italy and takes their crown as well as his own.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event byzantium">
-    <div class="year">AD 976–1025</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Basil II "the Bulgar-Slayer"</h3>
-      <p>Byzantium reaches its medieval military peak under Basil II, who crushes the Bulgarian Empire after decades of campaigning, restoring imperial power in the Balkans.</p>
+    <!-- AD 778 -->
+    <div class="beat-year">AD 778</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Battle of Roncevaux Pass</h4>
+        <p>Charlemagne's rearguard is ambushed and destroyed in the Pyrenees — later immortalized in the legend of Roland.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event byzantium">
-    <div class="year">AD 1054</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>The Great Schism</h3>
-      <p>Mutual excommunications between Rome and Constantinople formalize the lasting split between the Catholic and Orthodox churches.</p>
+    <!-- c. 780s-790s -->
+    <div class="beat-year">c. 780s–790s</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>The Carolingian Renaissance</h4>
+        <p>Charlemagne gathers scholars such as Alcuin of York to his court at Aachen, sparking a revival of learning.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event byzantium">
-    <div class="year">AD 1071</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Battle of Manzikert</h3>
-      <p>Seljuk Turks crush a Byzantine army and capture the emperor, opening Anatolia — the empire's heartland — to permanent Turkish settlement.</p>
+    <!-- AD 791-796 -->
+    <div class="beat-year">AD 791–796</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Campaigns Against the Avars</h4>
+        <p>Frankish forces crush the Avar khaganate in the Danube basin, seizing enormous treasure.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event byzantium">
-    <div class="year">AD 1204</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>The Fourth Crusade Sacks Constantinople</h3>
-      <p>Crusader and Venetian forces, diverted from their intended target, storm and pillage Constantinople itself, installing a Latin Empire and shattering Byzantine power beyond full recovery.</p>
+    <!-- AD 800 - shared -->
+    <div class="beat-year linked-year">AD 800</div>
+    <div class="lane-cell inheritance linked">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Coronation of Charlemagne</h4>
+        <p>Pope Leo III crowns Charlemagne emperor in Rome — a symbolic revival of the western empire.</p>
+        <p class="shared-note">⇄ Same event — told as personal biography at right.</p>
+      </div>
     </div>
-  </div>
-
-  <div class="event byzantium">
-    <div class="year">AD 1261</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Byzantine Restoration</h3>
-      <p>Michael VIII Palaiologos retakes Constantinople from the Latins, but the restored empire is a fraction of its former self, beset by rivals on every side.</p>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne linked">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Crowned Emperor in Rome</h4>
+        <p>On Christmas Day, Leo III crowns Charlemagne Emperor of the Romans, reviving the imperial title in the west.</p>
+        <p class="shared-note">⇄ Same event as Wickham's account, at left.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event byzantium">
-    <div class="year">AD 1453</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Fall of Constantinople</h3>
-      <p>Ottoman Sultan Mehmed II takes the city after a weeks-long siege, killing the last emperor, Constantine XI, and ending the Roman state founded over two thousand years earlier — the close of Norwich's history.</p>
+    <!-- AD 802 -->
+    <div class="beat-year">AD 802</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Reform of Law and Government</h4>
+        <p>Charlemagne issues capitularies standardizing law and dispatches missi dominici to inspect and enforce his rule.</p>
+      </div>
     </div>
-  </div>
 
-</div>
-
-<section class="book-section">
-  <h2 class="book-title">IV. Charlemagne — Father of a Continent</h2>
-  <p class="book-sub">Alessandro Barbero's biography of the Frankish king who briefly reunified much of western Europe under a single crown, 742–814 AD.</p>
-</section>
-<div class="timeline">
-
-  <div class="event charlemagne">
-    <div class="year">c. 742</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Birth of Charlemagne</h3>
-      <p>Charles is born to Pippin the Short, grandson of the great Frankish leader Charles Martel.</p>
+    <!-- AD 813 -->
+    <div class="beat-year">AD 813</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Louis the Pious Crowned Co-Emperor</h4>
+        <p>Charlemagne, anticipating his death, crowns his son Louis as co-emperor to secure the succession.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event charlemagne">
-    <div class="year">768</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Charlemagne Becomes King of the Franks</h3>
-      <p>On Pippin's death, the kingdom is divided between Charlemagne and his brother Carloman.</p>
+    <!-- AD 814 -->
+    <div class="beat-year">AD 814</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell charlemagne">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Death of Charlemagne</h4>
+        <p>Charlemagne dies at his palace in Aachen. His empire outlives him by only a generation, but his reign leaves a lasting template for European kingship.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="event charlemagne">
-    <div class="year">771</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Sole Rule</h3>
-      <p>Carloman dies and Charlemagne becomes sole king of the Franks.</p>
+    <!-- AD 843 -->
+    <div class="beat-year">AD 843</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Treaty of Verdun</h4>
+        <p>Charlemagne's grandsons divide the Carolingian Empire into three kingdoms, laying the ground for the future shapes of France and Germany.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event charlemagne">
-    <div class="year">772–804</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>The Saxon Wars</h3>
-      <p>A brutal, decades-long campaign subdues and forcibly Christianizes the Saxons, including the mass execution at Verden in 782.</p>
+    <!-- AD 863 -->
+    <div class="beat-year">AD 863</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Mission of Cyril and Methodius</h4>
+        <p>Byzantine missionary brothers convert the Slavs, devising the script that becomes Cyrillic.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event charlemagne">
-    <div class="year">774</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Conquest of the Lombard Kingdom</h3>
-      <p>Charlemagne defeats the Lombards in Italy and takes their crown, becoming King of the Lombards as well as the Franks.</p>
+    <!-- AD 962 -->
+    <div class="beat-year">AD 962</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Otto I Crowned Holy Roman Emperor</h4>
+        <p>The German king Otto I is crowned emperor in Rome, founding the line that becomes the Holy Roman Empire.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event charlemagne">
-    <div class="year">778</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Battle of Roncevaux Pass</h3>
-      <p>Charlemagne's rearguard is ambushed and destroyed in the Pyrenees during a retreat from Spain — later immortalized in the legend of Roland.</p>
+    <!-- AD 976-1025 -->
+    <div class="beat-year">AD 976–1025</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Basil II "the Bulgar-Slayer"</h4>
+        <p>Byzantium reaches its medieval military peak as Basil II crushes the Bulgarian Empire after decades of campaigning.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event charlemagne">
-    <div class="year">c. 780s–790s</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>The Carolingian Renaissance</h3>
-      <p>Charlemagne gathers scholars such as Alcuin of York to his court at Aachen, sparking a revival of learning, manuscript copying, and educational reform across the realm.</p>
+    <!-- c. 1000 -->
+    <div class="beat-year">c. AD 1000</div>
+    <div class="lane-cell inheritance">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>A New Political Landscape</h4>
+        <p>Wickham's narrative closes on a Europe of feudal lordships and emerging kingdoms, distinct from Byzantium and the Islamic world.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-  <div class="event charlemagne">
-    <div class="year">791–796</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Campaigns Against the Avars</h3>
-      <p>Frankish forces crush the Avar khaganate in the Danube basin, seizing enormous treasure and extending Carolingian power east.</p>
+    <!-- AD 1054 -->
+    <div class="beat-year">AD 1054</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>The Great Schism</h4>
+        <p>Mutual excommunications between Rome and Constantinople formalize the lasting split between Catholic and Orthodox churches.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event charlemagne">
-    <div class="year">800</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Crowned Emperor in Rome</h3>
-      <p>On Christmas Day, Pope Leo III crowns Charlemagne Emperor of the Romans, reviving the imperial title in the west for the first time since 476.</p>
+    <!-- AD 1071 -->
+    <div class="beat-year">AD 1071</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Battle of Manzikert</h4>
+        <p>Seljuk Turks crush a Byzantine army and capture the emperor, opening Anatolia to permanent Turkish settlement.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event charlemagne">
-    <div class="year">802</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Reform of Law and Government</h3>
-      <p>Charlemagne issues capitularies standardizing law and dispatches missi dominici — royal envoys — to inspect and enforce his rule across the empire.</p>
+    <!-- AD 1204 -->
+    <div class="beat-year">AD 1204</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>The Fourth Crusade Sacks Constantinople</h4>
+        <p>Crusader and Venetian forces storm and pillage Constantinople itself, installing a Latin Empire.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event charlemagne">
-    <div class="year">813</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Louis the Pious Crowned Co-Emperor</h3>
-      <p>Charlemagne, anticipating his death, crowns his son Louis as co-emperor to secure the succession.</p>
+    <!-- AD 1261 -->
+    <div class="beat-year">AD 1261</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Byzantine Restoration</h4>
+        <p>Michael VIII Palaiologos retakes Constantinople from the Latins, but the restored empire is a fraction of its former self.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
-  <div class="event charlemagne">
-    <div class="year">814</div>
-    <div class="marker"></div>
-    <div class="card">
-      <h3>Death of Charlemagne</h3>
-      <p>Charlemagne dies at his palace in Aachen and is buried there. His empire outlives him by only a generation before it begins to fracture — but his reign leaves a lasting template for European kingship and culture.</p>
+    <!-- AD 1453 -->
+    <div class="beat-year">AD 1453</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell byzantium">
+      <div class="lane-card">
+        <span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Fall of Constantinople</h4>
+        <p>Ottoman Sultan Mehmed II takes the city, killing the last emperor, Constantine XI — the close of Norwich's history.</p>
+      </div>
     </div>
-  </div>
+    <div class="lane-cell"></div>
 
+  </div>
 </div>
 
 <footer>
