@@ -11,6 +11,7 @@
     --byzantium: #b8860b;
     --islam: #1f7a4d;
     --charlemagne: #6b4c9a;
+    --west: #6b4c9a;
     --bg: #f7f3ea;
     --ink: #2a2420;
     --paper: #ffffff;
@@ -151,16 +152,16 @@
   .spqr .marker { background: var(--spqr); }
   .spqr .card { border-left-color: var(--spqr); }
 
-  /* --- parallel swimlane timeline (Inheritance / Byzantium / Islam / Charlemagne) --- */
+  /* --- parallel swimlane timeline (Byzantium / Islamic Caliphate / Latin West) --- */
   .swimlane-wrap {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px 50px;
   }
   .swimlane-grid {
     display: grid;
-    grid-template-columns: 100px 1fr 1fr 1fr 1fr;
-    column-gap: 14px;
+    grid-template-columns: 100px 1fr 1fr 1fr;
+    column-gap: 16px;
     row-gap: 14px;
   }
   .lane-heading {
@@ -172,10 +173,19 @@
     border-bottom: 2px solid #ddd;
     color: #555;
   }
-  .lane-heading.inheritance-h { color: var(--inheritance); border-color: var(--inheritance); }
+  .lane-heading .sub {
+    display: block;
+    text-transform: none;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 0;
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 2px;
+  }
   .lane-heading.byzantium-h { color: var(--byzantium); border-color: var(--byzantium); }
   .lane-heading.islam-h { color: var(--islam); border-color: var(--islam); }
-  .lane-heading.charlemagne-h { color: var(--charlemagne); border-color: var(--charlemagne); }
+  .lane-heading.west-h { color: var(--west); border-color: var(--west); }
 
   .beat-year {
     font-weight: bold;
@@ -196,7 +206,7 @@
     border-left: 4px solid #ccc;
   }
   .lane-card h4 {
-    margin: 0 0 4px;
+    margin: 6px 0 4px;
     font-size: 1rem;
   }
   .lane-card p {
@@ -205,18 +215,29 @@
     color: #333;
   }
   .card-tag {
-    display: none;
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    color: #fff;
+    margin-right: 4px;
   }
+  .tag-inheritance { background: var(--inheritance); }
+  .tag-byzantium { background: var(--byzantium); }
+  .tag-islam { background: var(--islam); }
+  .tag-charlemagne { background: var(--charlemagne); }
   .shared-note {
     margin-top: 6px !important;
     font-size: 0.78rem !important;
     font-style: italic;
     color: #777 !important;
   }
-  .lane-cell.inheritance .lane-card { border-left-color: var(--inheritance); }
   .lane-cell.byzantium .lane-card { border-left-color: var(--byzantium); }
   .lane-cell.islam .lane-card { border-left-color: var(--islam); }
-  .lane-cell.charlemagne .lane-card { border-left-color: var(--charlemagne); }
+  .lane-cell.west .lane-card { border-left-color: var(--west); }
 
   .lane-cell.linked .lane-card {
     border-left-width: 4px;
@@ -247,21 +268,6 @@
     }
     .beat-year:first-of-type { border-top: none; margin-top: 0; }
     .lane-cell:empty { display: none; }
-    .card-tag {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 2px 7px;
-      border-radius: 3px;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-    .tag-inheritance { background: var(--inheritance); }
-    .tag-byzantium { background: var(--byzantium); }
-    .tag-islam { background: var(--islam); }
-    .tag-charlemagne { background: var(--charlemagne); }
   }
 
   footer {
@@ -310,15 +316,14 @@
 
 <header>
   <h1>Rome to Charlemagne</h1>
-  <p>A timeline through five histories: Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em> (which follows both the Franks in the west and Byzantium in the east across the same centuries), John Julius Norwich's <em>A Short History of Byzantium</em>, Tom Holland's <em>In the Shadow of the Sword</em> (which follows Rome and Persia's collapse alongside the rise of Islam across those very same decades), and Alessandro Barbero's <em>Charlemagne: Father of a Continent</em>. Where two or more books describe the same moment, their entries sit side by side at the same point in time, in separate lanes.</p>
+  <p>A timeline through five histories: Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em>, John Julius Norwich's <em>A Short History of Byzantium</em>, Tom Holland's <em>In the Shadow of the Sword</em>, and Alessandro Barbero's <em>Charlemagne: Father of a Continent</em>. After Rome's own story below, the timeline stops grouping events by book and groups them by empire instead — Byzantium, the Islamic Caliphate, and the Latin West — since several of these books actually follow the very same empires from different angles. Each card names its source; where two empires cross paths at the same moment, both appear side by side, marked with ⇄.</p>
 </header>
 
 <div class="legend">
   <span><span class="dot" style="background:var(--spqr)"></span>SPQR (753 BC – 212 AD)</span>
-  <span><span class="dot" style="background:var(--inheritance)"></span>The Inheritance of Rome (c. 300 – 1000 AD)</span>
-  <span><span class="dot" style="background:var(--byzantium)"></span>A Short History of Byzantium (330 – 1453 AD)</span>
-  <span><span class="dot" style="background:var(--islam)"></span>In the Shadow of the Sword (c. 570 – 750 AD)</span>
-  <span><span class="dot" style="background:var(--charlemagne)"></span>Charlemagne (742 – 814 AD)</span>
+  <span><span class="dot" style="background:var(--byzantium)"></span>Byzantium (312 – 1453 AD)</span>
+  <span><span class="dot" style="background:var(--islam)"></span>The Islamic Caliphate (c. 570 – 750 AD)</span>
+  <span><span class="dot" style="background:var(--west)"></span>The Latin West (376 – 1000 AD)</span>
 </div>
 
 <section class="book-section">
@@ -483,22 +488,21 @@
 </div>
 
 <section class="book-section">
-  <h2 class="book-title">II. Parallel Histories — Rome's Successors, Byzantium, the Rise of Islam, and Charlemagne</h2>
-  <p class="book-sub">From c. 300 AD, four books cover overlapping ground from different vantage points: Wickham's <em>Inheritance of Rome</em> tracks both the Frankish west and Byzantine east, Norwich's <em>Short History of Byzantium</em> stays fixed on Constantinople through 1453, Tom Holland's <em>In the Shadow of the Sword</em> follows Rome and Persia's collapse into the rise of Islam (Holland takes a more source-skeptical view of the traditional narrative than most standard accounts, and prefers "Believers" to "Muslims" for the earliest generation), and Barbero's <em>Charlemagne</em> zooms into one Frankish reign, 742–814. Where two or more books describe the same event, it appears more than once — once per lane — at the same row, marked with ⇄.</p>
+  <h2 class="book-title">II. Parallel Empires — Byzantium, the Islamic Caliphate, and the Latin West</h2>
+  <p class="book-sub">From c. 300 AD, this section is organized by empire rather than by book, because several books actually cover the same empire from different angles. Byzantium's lane draws on both Wickham's <em>Inheritance of Rome</em> and Norwich's <em>Short History of Byzantium</em>; the Latin West's lane draws on both Wickham and Barbero's <em>Charlemagne</em>; the Islamic Caliphate's lane is Holland's <em>In the Shadow of the Sword</em> alone. Every card carries a small tag naming its source book — a teal "Inheritance" tag can turn up in either the Byzantium or the Latin West lane, since that book covers both. Where the same empire's story is told by two books, their accounts are merged into one card. Where two <em>different</em> empires experience the same moment — a conquest, a siege, a battle — it appears once per empire, at the same row, marked with ⇄.</p>
 </section>
 
 <div class="swimlane-wrap">
   <div class="swimlane-grid">
 
     <div></div>
-    <div class="lane-heading inheritance-h">The Inheritance of Rome</div>
-    <div class="lane-heading byzantium-h">A Short History of Byzantium</div>
-    <div class="lane-heading islam-h">In the Shadow of the Sword</div>
-    <div class="lane-heading charlemagne-h">Charlemagne: Father of a Continent</div>
+    <div class="lane-heading byzantium-h">Byzantium<span class="sub">The Eastern Roman Empire</span></div>
+    <div class="lane-heading islam-h">The Islamic Caliphate<span class="sub">Rashidun &amp; Umayyad</span></div>
+    <div class="lane-heading west-h">The Latin West<span class="sub">Rome's Successors → Charlemagne</span></div>
 
     <!-- AD 312 -->
     <div class="beat-year">AD 312</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Constantine's Conversion</h4>
@@ -507,24 +511,14 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
-    <!-- AD 330 - shared -->
-    <div class="beat-year linked-year">AD 330</div>
-    <div class="lane-cell inheritance linked">
+    <!-- AD 330 -->
+    <div class="beat-year">AD 330</div>
+    <div class="lane-cell byzantium">
       <div class="lane-card">
-        <span class="card-tag tag-inheritance">Inheritance</span>
+        <span class="card-tag tag-inheritance">Inheritance</span><span class="card-tag tag-byzantium">Byzantium</span>
         <h4>Founding of Constantinople</h4>
-        <p>Constantine dedicates his new capital in the east, shifting the empire's center of gravity.</p>
-        <p class="shared-note">⇄ Same event — also opens the Byzantium timeline, at right.</p>
-      </div>
-    </div>
-    <div class="lane-cell byzantium linked">
-      <div class="lane-card">
-        <span class="card-tag tag-byzantium">Byzantium</span>
-        <h4>Constantinople Dedicated</h4>
-        <p>Constantine dedicates his "New Rome" on the site of Byzantium — the city that gives this empire its modern name.</p>
-        <p class="shared-note">⇄ Same event — Wickham covers it from the Roman west's perspective, at left.</p>
+        <p>Constantine dedicates his new capital, "New Rome," on the site of the old Greek city of Byzantium. Wickham frames it as the moment the empire's center of gravity shifts east; Norwich opens his history of Byzantium itself right here.</p>
       </div>
     </div>
     <div class="lane-cell"></div>
@@ -532,20 +526,18 @@
 
     <!-- AD 376-410 -->
     <div class="beat-year">AD 376–410</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Gothic Migration and the Sack of Rome</h4>
         <p>Pressed by the Huns, Gothic groups cross into the empire; in 410 Alaric's Visigoths sack Rome itself.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
     <!-- AD 395 -->
     <div class="beat-year">AD 395</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -558,59 +550,47 @@
 
     <!-- AD 451 -->
     <div class="beat-year">AD 451</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Battle of the Catalaunian Plains</h4>
         <p>A Roman-Gothic coalition halts Attila the Hun's advance into Gaul.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
     <!-- AD 476 -->
     <div class="beat-year">AD 476</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Deposition of Romulus Augustulus</h4>
         <p>Odoacer deposes the last western Roman emperor. Wickham treats this as a marker, not a sudden rupture.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
     <!-- AD 493 -->
     <div class="beat-year">AD 493</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Theoderic's Ostrogothic Kingdom</h4>
         <p>Theoderic the Great establishes a Gothic kingdom in Italy that consciously preserves Roman culture.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
-    <!-- AD 527-532 - shared -->
-    <div class="beat-year linked-year">AD 527–532</div>
-    <div class="lane-cell inheritance linked">
+    <!-- AD 527-532 -->
+    <div class="beat-year">AD 527–532</div>
+    <div class="lane-cell byzantium">
       <div class="lane-card">
-        <span class="card-tag tag-inheritance">Inheritance</span>
-        <h4>Justinian's Reign and Reconquest</h4>
-        <p>The eastern emperor Justinian codifies Roman law and attempts to reconquer the west, at devastating cost.</p>
-        <p class="shared-note">⇄ Same reign — Norwich narrates its opening crisis at right.</p>
-      </div>
-    </div>
-    <div class="lane-cell byzantium linked">
-      <div class="lane-card">
-        <span class="card-tag tag-byzantium">Byzantium</span>
-        <h4>The Nika Riots</h4>
-        <p>Rioting factions nearly topple Justinian; urged on by Empress Theodora, he crushes the revolt and rebuilds the city.</p>
-        <p class="shared-note">⇄ Same reign as Wickham's account, at left.</p>
+        <span class="card-tag tag-inheritance">Inheritance</span><span class="card-tag tag-byzantium">Byzantium</span>
+        <h4>Justinian's Reign, the Nika Riots, and the Reconquest</h4>
+        <p>Justinian codifies Roman law and attempts to reconquer the west at devastating cost, in Wickham's account. Norwich zooms in on the reign's near-catastrophic start: rioting factions almost topple Justinian in Constantinople before he and Empress Theodora crush the revolt and rebuild the city.</p>
       </div>
     </div>
     <div class="lane-cell"></div>
@@ -618,7 +598,6 @@
 
     <!-- AD 537 -->
     <div class="beat-year">AD 537</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -631,20 +610,18 @@
 
     <!-- AD 568 -->
     <div class="beat-year">AD 568</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Lombard Invasion of Italy</h4>
         <p>The Lombards enter Italy and establish a kingdom, fragmenting the peninsula for centuries.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
     <!-- c. 570 -->
     <div class="beat-year">c. 570</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell islam">
       <div class="lane-card">
@@ -658,7 +635,6 @@
     <!-- c. 610 -->
     <div class="beat-year">c. 610</div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
     <div class="lane-cell islam">
       <div class="lane-card">
         <span class="card-tag tag-islam">Islam</span>
@@ -668,30 +644,20 @@
     </div>
     <div class="lane-cell"></div>
 
-    <!-- AD 622 - shared -->
-    <div class="beat-year linked-year">AD 622</div>
-    <div class="lane-cell inheritance linked">
-      <div class="lane-card">
-        <span class="card-tag tag-inheritance">Inheritance</span>
-        <h4>The Hijra and Rise of Islam</h4>
-        <p>Muhammad's migration to Medina marks the start of the Islamic calendar.</p>
-        <p class="shared-note">⇄ Same event — Holland's account is two columns to the right.</p>
-      </div>
-    </div>
+    <!-- AD 622 -->
+    <div class="beat-year">AD 622</div>
     <div class="lane-cell"></div>
-    <div class="lane-cell islam linked">
+    <div class="lane-cell islam">
       <div class="lane-card">
         <span class="card-tag tag-islam">Islam</span>
         <h4>The Hijra to Medina</h4>
-        <p>Muhammad and his followers migrate from Mecca to Medina, founding the first Muslim community and starting the Islamic calendar.</p>
-        <p class="shared-note">⇄ Same event — Wickham covers it too, two columns to the left.</p>
+        <p>Muhammad and his followers migrate from Mecca to Medina, founding the first Muslim community and starting the Islamic calendar. Wickham notes this same migration in passing in <em>The Inheritance of Rome</em>, even though his own narrative stays focused on Rome's western and eastern heirs.</p>
       </div>
     </div>
     <div class="lane-cell"></div>
 
     <!-- AD 626 -->
     <div class="beat-year">AD 626</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -705,7 +671,6 @@
     <!-- c. 630 -->
     <div class="beat-year">c. 630</div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
     <div class="lane-cell islam">
       <div class="lane-card">
         <span class="card-tag tag-islam">Islam</span>
@@ -718,7 +683,6 @@
     <!-- AD 632 -->
     <div class="beat-year">AD 632</div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
     <div class="lane-cell islam">
       <div class="lane-card">
         <span class="card-tag tag-islam">Islam</span>
@@ -730,20 +694,12 @@
 
     <!-- AD 632-698 - shared -->
     <div class="beat-year linked-year">AD 632–698</div>
-    <div class="lane-cell inheritance linked">
-      <div class="lane-card">
-        <span class="card-tag tag-inheritance">Inheritance</span>
-        <h4>Islamic Expansion Across the Mediterranean</h4>
-        <p>Arab conquests sweep across the Levant, North Africa, and finally Visigothic Spain.</p>
-        <p class="shared-note">⇄ Same conquests, seen from Constantinople one column right, and from the conquerors themselves two columns right.</p>
-      </div>
-    </div>
     <div class="lane-cell byzantium linked">
       <div class="lane-card">
-        <span class="card-tag tag-byzantium">Byzantium</span>
+        <span class="card-tag tag-inheritance">Inheritance</span><span class="card-tag tag-byzantium">Byzantium</span>
         <h4>Loss of the Eastern and African Provinces</h4>
-        <p>The same Arab armies strip Byzantium of Syria, Palestine, Egypt, and North Africa, shrinking the empire permanently.</p>
-        <p class="shared-note">⇄ Same conquests as Wickham's account at left, and as the conquerors saw it, one column to the right.</p>
+        <p>Arab armies strip Byzantium of Syria, Palestine, Egypt, and North Africa in barely two generations. Wickham and Norwich both describe the same permanent contraction of the empire — from the losing side.</p>
+        <p class="shared-note">⇄ Same conquests, from the winning side — one column over.</p>
       </div>
     </div>
     <div class="lane-cell islam linked">
@@ -751,14 +707,13 @@
         <span class="card-tag tag-islam">Islam</span>
         <h4>The Believers' Conquests</h4>
         <p>In barely two generations, Arab armies rout Byzantium at Yarmouk (636) and the Sasanians at al-Qadisiyyah (636), then push into North Africa and Iberia. Holland calls the conquerors "Believers" rather than "Muslims," arguing a fully separate Islamic identity took another century or so to form.</p>
-        <p class="shared-note">⇄ Same conquests, from the conquerors' side — Byzantium's and Wickham's accounts are one and two columns to the left.</p>
+        <p class="shared-note">⇄ Same conquests, from the conquerors' side — Byzantium's account is one column to the left.</p>
       </div>
     </div>
     <div class="lane-cell"></div>
 
     <!-- AD 642 -->
     <div class="beat-year">AD 642</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell islam">
       <div class="lane-card">
@@ -772,7 +727,6 @@
     <!-- AD 661 -->
     <div class="beat-year">AD 661</div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
     <div class="lane-cell islam">
       <div class="lane-card">
         <span class="card-tag tag-islam">Islam</span>
@@ -784,20 +738,18 @@
 
     <!-- AD 664 -->
     <div class="beat-year">AD 664</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Synod of Whitby</h4>
         <p>Northumbria adopts Roman rather than Celtic Christian practice, tying England to continental Christendom.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
     <!-- AD 674-718 - shared -->
     <div class="beat-year linked-year">AD 674–718</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium linked">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -811,14 +763,13 @@
         <span class="card-tag tag-islam">Islam</span>
         <h4>Sieges of Constantinople, from the Believers' Side</h4>
         <p>Umayyad fleets and armies twice try to take Constantinople itself and fail both times, checked by the city's walls and by Greek fire.</p>
-        <p class="shared-note">⇄ Same sieges, from inside the walls — Norwich's account is one column to the left.</p>
+        <p class="shared-note">⇄ Same sieges, from inside the walls — one column to the left.</p>
       </div>
     </div>
     <div class="lane-cell"></div>
 
     <!-- AD 680 -->
     <div class="beat-year">AD 680</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell islam">
       <div class="lane-card">
@@ -832,7 +783,6 @@
     <!-- AD 691 -->
     <div class="beat-year">AD 691</div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
     <div class="lane-cell islam">
       <div class="lane-card">
         <span class="card-tag tag-islam">Islam</span>
@@ -844,28 +794,26 @@
 
     <!-- AD 711-718 - shared -->
     <div class="beat-year linked-year">AD 711–718</div>
-    <div class="lane-cell inheritance linked">
-      <div class="lane-card">
-        <span class="card-tag tag-inheritance">Inheritance</span>
-        <h4>Fall of Visigothic Spain</h4>
-        <p>Umayyad forces conquer most of Iberia, ending Visigothic rule and beginning centuries of al-Andalus.</p>
-        <p class="shared-note">⇄ Same conquest, from the winning side — two columns to the right.</p>
-      </div>
-    </div>
     <div class="lane-cell"></div>
     <div class="lane-cell islam linked">
       <div class="lane-card">
         <span class="card-tag tag-islam">Islam</span>
         <h4>Conquest of Iberia</h4>
         <p>Umayyad forces cross from North Africa and overrun almost the entire Visigothic kingdom in a few years, opening three centuries of al-Andalus.</p>
-        <p class="shared-note">⇄ Same conquest, from the losing side — Wickham's account is two columns to the left.</p>
+        <p class="shared-note">⇄ Same conquest, from the losing side — one column to the right.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
+    <div class="lane-cell west linked">
+      <div class="lane-card">
+        <span class="card-tag tag-inheritance">Inheritance</span>
+        <h4>Fall of Visigothic Spain</h4>
+        <p>Umayyad forces conquer most of Iberia, ending Visigothic rule and beginning centuries of al-Andalus.</p>
+        <p class="shared-note">⇄ Same conquest, from the winning side — one column to the left.</p>
+      </div>
+    </div>
 
     <!-- AD 730-843 -->
     <div class="beat-year">AD 730–843</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -876,25 +824,31 @@
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
-    <!-- AD 732 -->
-    <div class="beat-year">AD 732</div>
+    <!-- AD 732 - shared -->
+    <div class="beat-year linked-year">AD 732</div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell islam">
+    <div class="lane-cell islam linked">
       <div class="lane-card">
         <span class="card-tag tag-islam">Islam</span>
         <h4>Battle of Tours</h4>
-        <p>An Umayyad raiding force is defeated near Tours by Charles Martel, Charlemagne's grandfather — the high-water mark of the conquest in western Europe, and a preview of the Frankish power the timeline picks up again below.</p>
+        <p>An Umayyad raiding force is defeated near Tours — the high-water mark of the conquest in western Europe.</p>
+        <p class="shared-note">⇄ Same battle, from the winning side's home ground — one column to the right.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
+    <div class="lane-cell west linked">
+      <div class="lane-card">
+        <span class="card-tag tag-charlemagne">Charlemagne</span>
+        <h4>Battle of Tours</h4>
+        <p>Charles Martel, Charlemagne's grandfather, defeats an Umayyad raiding force near Tours — the moment Barbero's biography traces back to for the Carolingian family's rise to power.</p>
+        <p class="shared-note">⇄ Same battle, from the losing side — one column to the left.</p>
+      </div>
+    </div>
 
     <!-- c. 742 -->
     <div class="beat-year">c. 742</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Birth of Charlemagne</h4>
@@ -904,7 +858,6 @@
 
     <!-- AD 750 -->
     <div class="beat-year">AD 750</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell islam">
       <div class="lane-card">
@@ -917,23 +870,21 @@
 
     <!-- AD 751 -->
     <div class="beat-year">AD 751</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Pippin the Short Becomes King</h4>
         <p>Charlemagne's father deposes the last Merovingian king with papal sanction, founding the Carolingian dynasty.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
     <!-- AD 768 -->
     <div class="beat-year">AD 768</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Becomes King of the Franks</h4>
@@ -945,8 +896,7 @@
     <div class="beat-year">AD 771</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Sole Rule</h4>
@@ -958,8 +908,7 @@
     <div class="beat-year">AD 772–804</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>The Saxon Wars</h4>
@@ -971,8 +920,7 @@
     <div class="beat-year">AD 774</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Conquest of the Lombard Kingdom</h4>
@@ -984,8 +932,7 @@
     <div class="beat-year">AD 778</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Battle of Roncevaux Pass</h4>
@@ -997,8 +944,7 @@
     <div class="beat-year">c. 780s–790s</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>The Carolingian Renaissance</h4>
@@ -1010,8 +956,7 @@
     <div class="beat-year">AD 791–796</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Campaigns Against the Avars</h4>
@@ -1019,24 +964,15 @@
       </div>
     </div>
 
-    <!-- AD 800 - shared -->
-    <div class="beat-year linked-year">AD 800</div>
-    <div class="lane-cell inheritance linked">
+    <!-- AD 800 -->
+    <div class="beat-year">AD 800</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
-        <span class="card-tag tag-inheritance">Inheritance</span>
+        <span class="card-tag tag-inheritance">Inheritance</span><span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Coronation of Charlemagne</h4>
-        <p>Pope Leo III crowns Charlemagne emperor in Rome — a symbolic revival of the western empire.</p>
-        <p class="shared-note">⇄ Same event — told as personal biography, two columns to the right.</p>
-      </div>
-    </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne linked">
-      <div class="lane-card">
-        <span class="card-tag tag-charlemagne">Charlemagne</span>
-        <h4>Crowned Emperor in Rome</h4>
-        <p>On Christmas Day, Leo III crowns Charlemagne Emperor of the Romans, reviving the imperial title in the west.</p>
-        <p class="shared-note">⇄ Same event as Wickham's account, two columns to the left.</p>
+        <p>Pope Leo III crowns Charlemagne emperor in Rome on Christmas Day — a symbolic revival of the western empire. Wickham treats it as a hinge point for all of Europe; Barbero narrates it as the culmination of one man's life.</p>
       </div>
     </div>
 
@@ -1044,8 +980,7 @@
     <div class="beat-year">AD 802</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Reform of Law and Government</h4>
@@ -1057,8 +992,7 @@
     <div class="beat-year">AD 813</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Louis the Pious Crowned Co-Emperor</h4>
@@ -1070,8 +1004,7 @@
     <div class="beat-year">AD 814</div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell charlemagne">
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-charlemagne">Charlemagne</span>
         <h4>Death of Charlemagne</h4>
@@ -1081,20 +1014,18 @@
 
     <!-- AD 843 -->
     <div class="beat-year">AD 843</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Treaty of Verdun</h4>
         <p>Charlemagne's grandsons divide the Carolingian Empire into three kingdoms, laying the ground for the future shapes of France and Germany.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
     <!-- AD 863 -->
     <div class="beat-year">AD 863</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -1107,20 +1038,18 @@
 
     <!-- AD 962 -->
     <div class="beat-year">AD 962</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>Otto I Crowned Holy Roman Emperor</h4>
         <p>The German king Otto I is crowned emperor in Rome, founding the line that becomes the Holy Roman Empire.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
     <!-- AD 976-1025 -->
     <div class="beat-year">AD 976–1025</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -1133,20 +1062,18 @@
 
     <!-- c. 1000 -->
     <div class="beat-year">c. AD 1000</div>
-    <div class="lane-cell inheritance">
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west">
       <div class="lane-card">
         <span class="card-tag tag-inheritance">Inheritance</span>
         <h4>A New Political Landscape</h4>
         <p>Wickham's narrative closes on a Europe of feudal lordships and emerging kingdoms, distinct from Byzantium and the Islamic world.</p>
       </div>
     </div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
-    <div class="lane-cell"></div>
 
     <!-- AD 1054 -->
     <div class="beat-year">AD 1054</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -1160,7 +1087,6 @@
 
     <!-- AD 1071 -->
     <div class="beat-year">AD 1071</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -1173,7 +1099,6 @@
 
     <!-- AD 1204 -->
     <div class="beat-year">AD 1204</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -1186,7 +1111,6 @@
 
     <!-- AD 1261 -->
     <div class="beat-year">AD 1261</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -1199,7 +1123,6 @@
 
     <!-- AD 1453 -->
     <div class="beat-year">AD 1453</div>
-    <div class="lane-cell"></div>
     <div class="lane-cell byzantium">
       <div class="lane-card">
         <span class="card-tag tag-byzantium">Byzantium</span>
@@ -1231,7 +1154,7 @@
   <p>In the west, the church's separateness from royal power cut the other way. Rather than one crisis destabilizing one throne, Latin Christendom ended up with two competing hierarchies — kings and popes — each claiming ultimate authority, which produced centuries of low-grade conflict but also meant no single ruler could fully absorb the church the way Constantinople's emperors effectively could. That balance of power is part of why the papacy outlived every western empire built on top of it, while the fortunes of the Byzantine church rose and fell with the throne in Constantinople itself.</p>
 
   <h3>How the rise of Islam remade Byzantine Christianity</h3>
-  <p>The conquests on the Islam lane of the timeline above weren't just a territorial loss for Byzantium — they permanently rearranged Christianity itself. Between 637 and 642, Arab armies took Jerusalem, Antioch, and Alexandria, three of Christianity's five great patriarchates alongside Rome and Constantinople. Almost overnight, Constantinople became the only patriarchate still governed by a state that called itself Roman; Rome was independent of the empire anyway, and the other three now answered to a Muslim caliph. The old model of five co-equal patriarchates governing the church together — the pentarchy — kept its name and its ceremonial weight but lost its practical substance, leaving Constantinople with a claim to eastern Christian leadership it never had to share again. See <a href="https://cnewa.org/pentarchy-50899/" target="_blank" rel="noopener">CNEWA's overview of the pentarchy</a> and <a href="https://en.wikipedia.org/wiki/Pentarchy" target="_blank" rel="noopener">Wikipedia's entry on the concept</a>.</p>
+  <p>The conquests on the Islamic Caliphate lane of the timeline above weren't just a territorial loss for Byzantium — they permanently rearranged Christianity itself. Between 637 and 642, Arab armies took Jerusalem, Antioch, and Alexandria, three of Christianity's five great patriarchates alongside Rome and Constantinople. Almost overnight, Constantinople became the only patriarchate still governed by a state that called itself Roman; Rome was independent of the empire anyway, and the other three now answered to a Muslim caliph. The old model of five co-equal patriarchates governing the church together — the pentarchy — kept its name and its ceremonial weight but lost its practical substance, leaving Constantinople with a claim to eastern Christian leadership it never had to share again. See <a href="https://cnewa.org/pentarchy-50899/" target="_blank" rel="noopener">CNEWA's overview of the pentarchy</a> and <a href="https://en.wikipedia.org/wiki/Pentarchy" target="_blank" rel="noopener">Wikipedia's entry on the concept</a>.</p>
   <p>The same conquests also resolved, by removing the argument's home ground, one of the empire's oldest internal fights. Egypt and much of Syria had been strongholds of Miaphysite Christians, who rejected the Chalcedonian formula on the nature of Christ that Constantinople insisted on — a split going back to the Council of Chalcedon in 451 that emperors had spent a century failing to paper over. Once those provinces were under Muslim rule, contact between Chalcedonian and Miaphysite Christians was largely cut off, and the dispute inside the empire's remaining territory cooled: Constantinople reaffirmed strict Chalcedonian orthodoxy at the Third Council of Constantinople in 680–681, no longer needing to bargain with a large dissenting population next door. Byzantium came out of it more theologically uniform, but only because the Christians who disagreed with it — the ancestors of today's Coptic and Syriac Orthodox churches — had been permanently split off into a separate world under Islamic rule. See <a href="https://en.wikipedia.org/wiki/Chalcedonian_schism" target="_blank" rel="noopener">Wikipedia's account of the Chalcedonian schism</a> and <a href="https://www.britannica.com/topic/Copt" target="_blank" rel="noopener">Britannica's entry on the Copts</a>.</p>
   <p>Islam also became something Byzantine Christians had to think about theologically, not just militarily. John of Damascus, a Christian who served in the Umayyad civil administration in Damascus before becoming a monk, wrote one of the first sustained Christian responses to Islam around the 730s — and he classified it not as a new religion but as a Christian heresy, "the Heresy of the Ishmaelites," to be refuted the way earlier heresies had been. That framing shaped Christian polemic against Islam for centuries afterward. See <a href="https://hugoye.bethmardutho.org/article/hv11n2griffith" target="_blank" rel="noopener">Sidney Griffith's study of John of Damascus and Islam</a> in the journal <em>Hugoye</em>.</p>
 
