@@ -152,6 +152,30 @@
   .spqr .marker { background: var(--spqr); }
   .spqr .card { border-left-color: var(--spqr); }
 
+  .time-gap {
+    display: flex;
+    align-items: center;
+    padding-left: 140px;
+    color: #999;
+    font-size: 0.72rem;
+    font-style: italic;
+  }
+  @media (max-width: 640px) {
+    .time-gap { padding-left: 90px; }
+  }
+  .time-gap-row {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.72rem;
+    font-style: italic;
+  }
+  .gap-label {
+    white-space: nowrap;
+  }
+
   /* --- parallel swimlane timeline (Byzantium / Islamic Caliphate / Latin West) --- */
   .swimlane-wrap {
     max-width: 1100px;
@@ -341,6 +365,8 @@
     </div>
   </div>
 
+    <div class="time-gap" style="height:98px;"><span class="gap-label">244 years</span></div>
+
   <div class="event spqr">
     <div class="year">509 BC</div>
     <div class="marker"></div>
@@ -349,6 +375,8 @@
       <p>The last king, Tarquin the Proud, is expelled. Rome becomes a republic governed by elected magistrates and the Senate.</p>
     </div>
   </div>
+
+    <div class="time-gap" style="height:6px;"></div>
 
   <div class="event spqr">
     <div class="year">c. 494 BC</div>
@@ -359,6 +387,8 @@
     </div>
   </div>
 
+    <div class="time-gap" style="height:42px;"><span class="gap-label">104 years</span></div>
+
   <div class="event spqr">
     <div class="year">390 BC</div>
     <div class="marker"></div>
@@ -367,6 +397,8 @@
       <p>A Gallic force under Brennus defeats Rome and occupies the city, a trauma that lingers in Roman memory for centuries.</p>
     </div>
   </div>
+
+    <div class="time-gap" style="height:50px;"><span class="gap-label">126 years</span></div>
 
   <div class="event spqr">
     <div class="year">264–146 BC</div>
@@ -377,6 +409,8 @@
     </div>
   </div>
 
+    <div class="time-gap" style="height:52px;"><span class="gap-label">131 years</span></div>
+
   <div class="event spqr">
     <div class="year">133–121 BC</div>
     <div class="marker"></div>
@@ -385,6 +419,8 @@
       <p>Tiberius and Gaius Gracchus push land and political reforms and are killed for it — the Republic's political violence begins in earnest.</p>
     </div>
   </div>
+
+    <div class="time-gap" style="height:18px;"><span class="gap-label">45 years</span></div>
 
   <div class="event spqr">
     <div class="year">88–82 BC</div>
@@ -395,6 +431,8 @@
     </div>
   </div>
 
+    <div class="time-gap" style="height:11px;"><span class="gap-label">28 years</span></div>
+
   <div class="event spqr">
     <div class="year">60 BC</div>
     <div class="marker"></div>
@@ -403,6 +441,8 @@
       <p>Julius Caesar, Pompey, and Crassus form an informal alliance to dominate Roman politics.</p>
     </div>
   </div>
+
+    <div class="time-gap" style="height:4px;"></div>
 
   <div class="event spqr">
     <div class="year">49 BC</div>
@@ -422,6 +462,8 @@
     </div>
   </div>
 
+    <div class="time-gap" style="height:5px;"></div>
+
   <div class="event spqr">
     <div class="year">31 BC</div>
     <div class="marker"></div>
@@ -440,6 +482,8 @@
     </div>
   </div>
 
+    <div class="time-gap" style="height:16px;"><span class="gap-label">41 years</span></div>
+
   <div class="event spqr">
     <div class="year">AD 14</div>
     <div class="marker"></div>
@@ -448,6 +492,8 @@
       <p>Tiberius succeeds him, confirming that imperial power can pass by inheritance — the principate becomes a monarchy in fact.</p>
     </div>
   </div>
+
+    <div class="time-gap" style="height:20px;"><span class="gap-label">50 years</span></div>
 
   <div class="event spqr">
     <div class="year">AD 64</div>
@@ -458,6 +504,8 @@
     </div>
   </div>
 
+    <div class="time-gap" style="height:6px;"></div>
+
   <div class="event spqr">
     <div class="year">AD 79</div>
     <div class="marker"></div>
@@ -467,6 +515,8 @@
     </div>
   </div>
 
+    <div class="time-gap" style="height:15px;"><span class="gap-label">38 years</span></div>
+
   <div class="event spqr">
     <div class="year">AD 117</div>
     <div class="marker"></div>
@@ -475,6 +525,8 @@
       <p>Under Trajan, Roman territory reaches its widest span, from Britain to Mesopotamia.</p>
     </div>
   </div>
+
+    <div class="time-gap" style="height:38px;"><span class="gap-label">95 years</span></div>
 
   <div class="event spqr">
     <div class="year">AD 212</div>
@@ -512,6 +564,8 @@
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:7px;"></div>
+
     <!-- AD 330 -->
     <div class="beat-year">AD 330</div>
     <div class="lane-cell byzantium">
@@ -523,6 +577,8 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+
+    <div class="time-gap-row" style="height:18px;"><span class="gap-label">46 years</span></div>
 
     <!-- AD 376-410 -->
     <div class="beat-year">AD 376–410</div>
@@ -536,6 +592,8 @@
       </div>
     </div>
 
+    <div class="time-gap-row" style="height:8px;"></div>
+
     <!-- AD 395 -->
     <div class="beat-year">AD 395</div>
     <div class="lane-cell byzantium">
@@ -547,6 +605,8 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+
+    <div class="time-gap-row" style="height:22px;"><span class="gap-label">56 years</span></div>
 
     <!-- AD 451 -->
     <div class="beat-year">AD 451</div>
@@ -560,6 +620,8 @@
       </div>
     </div>
 
+    <div class="time-gap-row" style="height:10px;"><span class="gap-label">25 years</span></div>
+
     <!-- AD 476 -->
     <div class="beat-year">AD 476</div>
     <div class="lane-cell"></div>
@@ -571,6 +633,8 @@
         <p>Odoacer deposes the last western Roman emperor. Wickham treats this as a marker, not a sudden rupture.</p>
       </div>
     </div>
+
+    <div class="time-gap-row" style="height:7px;"></div>
 
     <!-- AD 493 -->
     <div class="beat-year">AD 493</div>
@@ -584,6 +648,8 @@
       </div>
     </div>
 
+    <div class="time-gap-row" style="height:14px;"><span class="gap-label">34 years</span></div>
+
     <!-- AD 527-532 -->
     <div class="beat-year">AD 527–532</div>
     <div class="lane-cell byzantium">
@@ -596,6 +662,8 @@
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:4px;"></div>
+
     <!-- AD 537 -->
     <div class="beat-year">AD 537</div>
     <div class="lane-cell byzantium">
@@ -607,6 +675,8 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+
+    <div class="time-gap-row" style="height:12px;"><span class="gap-label">31 years</span></div>
 
     <!-- AD 568 -->
     <div class="beat-year">AD 568</div>
@@ -632,6 +702,8 @@
     </div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:16px;"><span class="gap-label">40 years</span></div>
+
     <!-- c. 610 -->
     <div class="beat-year">c. 610</div>
     <div class="lane-cell"></div>
@@ -643,6 +715,8 @@
       </div>
     </div>
     <div class="lane-cell"></div>
+
+    <div class="time-gap-row" style="height:5px;"></div>
 
     <!-- AD 622 -->
     <div class="beat-year">AD 622</div>
@@ -712,6 +786,8 @@
     </div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:4px;"></div>
+
     <!-- AD 642 -->
     <div class="beat-year">AD 642</div>
     <div class="lane-cell"></div>
@@ -723,6 +799,8 @@
       </div>
     </div>
     <div class="lane-cell"></div>
+
+    <div class="time-gap-row" style="height:8px;"></div>
 
     <!-- AD 661 -->
     <div class="beat-year">AD 661</div>
@@ -747,6 +825,8 @@
         <p>Northumbria adopts Roman rather than Celtic Christian practice, tying England to continental Christendom.</p>
       </div>
     </div>
+
+    <div class="time-gap-row" style="height:4px;"></div>
 
     <!-- AD 674-718 - shared -->
     <div class="beat-year linked-year">AD 674–718</div>
@@ -780,6 +860,8 @@
     </div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:4px;"></div>
+
     <!-- AD 691 -->
     <div class="beat-year">AD 691</div>
     <div class="lane-cell"></div>
@@ -791,6 +873,8 @@
       </div>
     </div>
     <div class="lane-cell"></div>
+
+    <div class="time-gap-row" style="height:8px;"><span class="gap-label">20 years</span></div>
 
     <!-- AD 711-718 - shared -->
     <div class="beat-year linked-year">AD 711–718</div>
@@ -811,6 +895,8 @@
         <p class="shared-note">⇄ Same conquest, from the winning side — one column to the left.</p>
       </div>
     </div>
+
+    <div class="time-gap-row" style="height:8px;"></div>
 
     <!-- AD 730-843 -->
     <div class="beat-year">AD 730–843</div>
@@ -843,6 +929,8 @@
         <p class="shared-note">⇄ Same battle, from the losing side — one column to the left.</p>
       </div>
     </div>
+
+    <div class="time-gap-row" style="height:4px;"></div>
 
     <!-- c. 742 -->
     <div class="beat-year">c. 742</div>
@@ -879,6 +967,8 @@
         <p>Charlemagne's father deposes the last Merovingian king with papal sanction, founding the Carolingian dynasty.</p>
       </div>
     </div>
+
+    <div class="time-gap-row" style="height:7px;"></div>
 
     <!-- AD 768 -->
     <div class="beat-year">AD 768</div>
@@ -952,6 +1042,8 @@
       </div>
     </div>
 
+    <div class="time-gap-row" style="height:4px;"></div>
+
     <!-- AD 791-796 -->
     <div class="beat-year">AD 791–796</div>
     <div class="lane-cell"></div>
@@ -963,6 +1055,8 @@
         <p>Frankish forces crush the Avar khaganate in the Danube basin, seizing enormous treasure.</p>
       </div>
     </div>
+
+    <div class="time-gap-row" style="height:4px;"></div>
 
     <!-- AD 800 -->
     <div class="beat-year">AD 800</div>
@@ -988,6 +1082,8 @@
       </div>
     </div>
 
+    <div class="time-gap-row" style="height:4px;"></div>
+
     <!-- AD 813 -->
     <div class="beat-year">AD 813</div>
     <div class="lane-cell"></div>
@@ -1012,6 +1108,8 @@
       </div>
     </div>
 
+    <div class="time-gap-row" style="height:12px;"><span class="gap-label">29 years</span></div>
+
     <!-- AD 843 -->
     <div class="beat-year">AD 843</div>
     <div class="lane-cell"></div>
@@ -1023,6 +1121,8 @@
         <p>Charlemagne's grandsons divide the Carolingian Empire into three kingdoms, laying the ground for the future shapes of France and Germany.</p>
       </div>
     </div>
+
+    <div class="time-gap-row" style="height:8px;"><span class="gap-label">20 years</span></div>
 
     <!-- AD 863 -->
     <div class="beat-year">AD 863</div>
@@ -1036,6 +1136,8 @@
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:40px;"><span class="gap-label">99 years</span></div>
+
     <!-- AD 962 -->
     <div class="beat-year">AD 962</div>
     <div class="lane-cell"></div>
@@ -1047,6 +1149,8 @@
         <p>The German king Otto I is crowned emperor in Rome, founding the line that becomes the Holy Roman Empire.</p>
       </div>
     </div>
+
+    <div class="time-gap-row" style="height:6px;"></div>
 
     <!-- AD 976-1025 -->
     <div class="beat-year">AD 976–1025</div>
@@ -1060,6 +1164,8 @@
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:10px;"><span class="gap-label">24 years</span></div>
+
     <!-- c. 1000 -->
     <div class="beat-year">c. AD 1000</div>
     <div class="lane-cell"></div>
@@ -1071,6 +1177,8 @@
         <p>Wickham's narrative closes on a Europe of feudal lordships and emerging kingdoms, distinct from Byzantium and the Islamic world.</p>
       </div>
     </div>
+
+    <div class="time-gap-row" style="height:22px;"><span class="gap-label">54 years</span></div>
 
     <!-- AD 1054 -->
     <div class="beat-year">AD 1054</div>
@@ -1085,6 +1193,8 @@
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:7px;"></div>
+
     <!-- AD 1071 -->
     <div class="beat-year">AD 1071</div>
     <div class="lane-cell byzantium">
@@ -1098,6 +1208,8 @@
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:53px;"><span class="gap-label">133 years</span></div>
+
     <!-- AD 1204 -->
     <div class="beat-year">AD 1204</div>
     <div class="lane-cell byzantium">
@@ -1110,6 +1222,8 @@
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
+    <div class="time-gap-row" style="height:23px;"><span class="gap-label">57 years</span></div>
+
     <!-- AD 1261 -->
     <div class="beat-year">AD 1261</div>
     <div class="lane-cell byzantium">
@@ -1121,6 +1235,8 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+
+    <div class="time-gap-row" style="height:77px;"><span class="gap-label">192 years</span></div>
 
     <!-- AD 1453 -->
     <div class="beat-year">AD 1453</div>
