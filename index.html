@@ -12,6 +12,7 @@
     --islam: #1f7a4d;
     --charlemagne: #6b4c9a;
     --west: #6b4c9a;
+    --mongol: #8a5a2b;
     --bg: #f7f3ea;
     --ink: #2a2420;
     --paper: #ffffff;
@@ -184,7 +185,7 @@
   }
   .swimlane-grid {
     display: grid;
-    grid-template-columns: 100px 1fr 1fr 1fr;
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr;
     column-gap: 16px;
     row-gap: 14px;
   }
@@ -210,6 +211,7 @@
   .lane-heading.byzantium-h { color: var(--byzantium); border-color: var(--byzantium); }
   .lane-heading.islam-h { color: var(--islam); border-color: var(--islam); }
   .lane-heading.west-h { color: var(--west); border-color: var(--west); }
+  .lane-heading.mongol-h { color: var(--mongol); border-color: var(--mongol); }
 
   .beat-year {
     font-weight: bold;
@@ -253,6 +255,7 @@
   .tag-byzantium { background: var(--byzantium); }
   .tag-islam { background: var(--islam); }
   .tag-charlemagne { background: var(--charlemagne); }
+  .tag-weatherford { background: var(--mongol); }
   .shared-note {
     margin-top: 6px !important;
     font-size: 0.78rem !important;
@@ -262,6 +265,7 @@
   .lane-cell.byzantium .lane-card { border-left-color: var(--byzantium); }
   .lane-cell.islam .lane-card { border-left-color: var(--islam); }
   .lane-cell.west .lane-card { border-left-color: var(--west); }
+  .lane-cell.mongol .lane-card { border-left-color: var(--mongol); }
 
   .lane-cell.linked .lane-card {
     border-left-width: 4px;
@@ -340,7 +344,7 @@
 
 <header>
   <h1>Rome to Charlemagne</h1>
-  <p>A timeline through five histories: Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em>, John Julius Norwich's <em>A Short History of Byzantium</em>, Tom Holland's <em>In the Shadow of the Sword</em>, and Alessandro Barbero's <em>Charlemagne: Father of a Continent</em>. After Rome's own story below, the timeline stops grouping events by book and groups them by empire instead — Byzantium, the Islamic Caliphate, and the Latin West — since several of these books actually follow the very same empires from different angles. Each card names its source; where two empires cross paths at the same moment, both appear side by side, marked with ⇄.</p>
+  <p>A timeline through five histories: Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em>, John Julius Norwich's <em>A Short History of Byzantium</em>, Tom Holland's <em>In the Shadow of the Sword</em>, and Alessandro Barbero's <em>Charlemagne: Father of a Continent</em> — plus one further book, Jack Weatherford's <em>Genghis Khan and the Making of the Modern World</em>, brought in for a fourth thread none of the original five ever really covers. After Rome's own story below, the timeline stops grouping events by book and groups them by empire instead — Byzantium, the Islamic Caliphate, the Latin West, and the Mongol Empire — since several of these books actually follow the very same empires from different angles, and the Mongols keep crashing into all three of the others. Each card names its source; where two empires cross paths at the same moment, both appear side by side, marked with ⇄.</p>
 </header>
 
 <div class="legend">
@@ -348,6 +352,7 @@
   <span><span class="dot" style="background:var(--byzantium)"></span>Byzantium (312 – 1453 AD)</span>
   <span><span class="dot" style="background:var(--islam)"></span>The Islamic Caliphate (c. 570 – 750 AD)</span>
   <span><span class="dot" style="background:var(--west)"></span>The Latin West (376 – 1000 AD)</span>
+  <span><span class="dot" style="background:var(--mongol)"></span>The Mongol Empire (1162 – 1295 AD)</span>
 </div>
 
 <section class="book-section">
@@ -540,17 +545,19 @@
 </div>
 
 <section class="book-section">
-  <h2 class="book-title">II. Parallel Empires — Byzantium, the Islamic Caliphate, and the Latin West</h2>
-  <p class="book-sub">From c. 300 AD, this section is organized by empire rather than by book, because several books actually cover the same empire from different angles. Byzantium's lane draws on both Wickham's <em>Inheritance of Rome</em> and Norwich's <em>Short History of Byzantium</em>; the Latin West's lane draws on both Wickham and Barbero's <em>Charlemagne</em>; the Islamic Caliphate's lane is Holland's <em>In the Shadow of the Sword</em> alone. Every card carries a small tag naming its source book — a teal "Inheritance" tag can turn up in either the Byzantium or the Latin West lane, since that book covers both. Where the same empire's story is told by two books, their accounts are merged into one card. Where two <em>different</em> empires experience the same moment — a conquest, a siege, a battle — it appears once per empire, at the same row, marked with ⇄.</p>
+  <h2 class="book-title">II. Parallel Empires — Byzantium, the Islamic Caliphate, the Latin West, and the Mongols</h2>
+  <p class="book-sub">From c. 300 AD, this section is organized by empire rather than by book, because several books actually cover the same empire from different angles. Byzantium's lane draws on both Wickham's <em>Inheritance of Rome</em> and Norwich's <em>Short History of Byzantium</em>; the Latin West's lane draws on both Wickham and Barbero's <em>Charlemagne</em>; the Islamic Caliphate's lane is Holland's <em>In the Shadow of the Sword</em> alone. The Mongol Empire's lane is the exception: it isn't in any of the original five books at all, so every card in it is tagged "Weatherford," after Jack Weatherford's <em>Genghis Khan and the Making of the Modern World</em> — added because the Mongols keep reshaping the other three empires' stories from offstage. Every card carries a small tag naming its source book — a teal "Inheritance" tag can turn up in either the Byzantium or the Latin West lane, since that book covers both. Where the same empire's story is told by two books, their accounts are merged into one card. Where two <em>different</em> empires experience the same moment — a conquest, a siege, a battle — it appears once per empire, at the same row, marked with ⇄.</p>
 </section>
 
 <div class="swimlane-wrap">
   <div class="swimlane-grid">
 
+
     <div></div>
     <div class="lane-heading byzantium-h">Byzantium<span class="sub">The Eastern Roman Empire</span></div>
     <div class="lane-heading islam-h">The Islamic Caliphate<span class="sub">Rashidun &amp; Umayyad</span></div>
     <div class="lane-heading west-h">The Latin West<span class="sub">Rome's Successors → Charlemagne</span></div>
+    <div class="lane-heading mongol-h">The Mongol Empire<span class="sub">Weatherford, not one of the five</span></div>
 
     <!-- AD 312 -->
     <div class="beat-year">AD 312</div>
@@ -561,6 +568,7 @@
         <p>Constantine wins the Battle of the Milvian Bridge and begins the empire's turn toward Christianity.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
@@ -577,6 +585,7 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:18px;"><span class="gap-label">46 years</span></div>
 
@@ -591,6 +600,7 @@
         <p>Pressed by the Huns, Gothic groups cross into the empire; in 410 Alaric's Visigoths sack Rome itself.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:8px;"></div>
 
@@ -603,6 +613,7 @@
         <p>On the death of Theodosius I, the empire splits between his two sons and is never reunited.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
@@ -619,6 +630,7 @@
         <p>A Roman-Gothic coalition halts Attila the Hun's advance into Gaul.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:10px;"><span class="gap-label">25 years</span></div>
 
@@ -633,6 +645,7 @@
         <p>Odoacer deposes the last western Roman emperor. Wickham treats this as a marker, not a sudden rupture.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:7px;"></div>
 
@@ -647,6 +660,7 @@
         <p>Theoderic the Great establishes a Gothic kingdom in Italy that consciously preserves Roman culture.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:14px;"><span class="gap-label">34 years</span></div>
 
@@ -659,6 +673,7 @@
         <p>Justinian codifies Roman law and attempts to reconquer the west at devastating cost, in Wickham's account. Norwich zooms in on the reign's near-catastrophic start: rioting factions almost topple Justinian in Constantinople before he and Empress Theodora crush the revolt and rebuild the city.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
@@ -675,6 +690,7 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:12px;"><span class="gap-label">31 years</span></div>
 
@@ -689,6 +705,7 @@
         <p>The Lombards enter Italy and establish a kingdom, fragmenting the peninsula for centuries.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <!-- c. 570 -->
     <div class="beat-year">c. 570</div>
@@ -700,6 +717,7 @@
         <p>Muhammad is born in Mecca, into an Arabia that Holland frames as caught between two exhausted empires, Rome and Persia, both bled dry by decades of war.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:16px;"><span class="gap-label">40 years</span></div>
@@ -715,6 +733,7 @@
       </div>
     </div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:5px;"></div>
 
@@ -729,6 +748,7 @@
       </div>
     </div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
     <!-- AD 626 -->
     <div class="beat-year">AD 626</div>
@@ -739,6 +759,7 @@
         <p>A combined Avar and Persian siege fails to take the capital, preserving the empire at one of its lowest points.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
@@ -753,6 +774,7 @@
       </div>
     </div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
     <!-- AD 632 -->
     <div class="beat-year">AD 632</div>
@@ -764,6 +786,7 @@
         <p>Muhammad dies in Medina. His companion Abu Bakr becomes the first caliph, and the conquests that will topple Persia and strip Byzantium of its richest provinces begin almost immediately.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
     <!-- AD 632-698 - shared -->
@@ -785,6 +808,7 @@
       </div>
     </div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:4px;"></div>
 
@@ -798,6 +822,7 @@
         <p>Arab forces crush the Sasanian army at Nahavand, effectively ending nearly 400 years of Persian imperial rule — the other half of Holland's story about late antiquity's twin empires.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:8px;"></div>
@@ -813,6 +838,7 @@
       </div>
     </div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
     <!-- AD 664 -->
     <div class="beat-year">AD 664</div>
@@ -825,6 +851,7 @@
         <p>Northumbria adopts Roman rather than Celtic Christian practice, tying England to continental Christendom.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:4px;"></div>
 
@@ -847,6 +874,7 @@
       </div>
     </div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
     <!-- AD 680 -->
     <div class="beat-year">AD 680</div>
@@ -858,6 +886,7 @@
         <p>Umayyad forces kill Muhammad's grandson Husayn at Karbala; his death becomes the founding tragedy of Shia Islam.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:4px;"></div>
@@ -872,6 +901,7 @@
         <p>The Umayyad caliph Abd al-Malik completes the Dome of the Rock in Jerusalem, one of the first great monuments of a distinctly Islamic architecture.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:8px;"><span class="gap-label">20 years</span></div>
@@ -895,6 +925,7 @@
         <p class="shared-note">⇄ Same conquest, from the winning side — one column to the left.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:8px;"></div>
 
@@ -907,6 +938,7 @@
         <p>Two long periods of imperial policy ban the veneration of religious images before icons are permanently restored.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
@@ -929,6 +961,7 @@
         <p class="shared-note">⇄ Same battle, from the losing side — one column to the left.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:4px;"></div>
 
@@ -943,6 +976,7 @@
         <p>Charles is born to Pippin the Short, grandson of the great Frankish leader Charles Martel.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <!-- AD 750 -->
     <div class="beat-year">AD 750</div>
@@ -954,6 +988,7 @@
         <p>The Abbasid family overthrows the Umayyads in a bloody revolution and moves the caliphate's center from Damascus toward a new capital, Baghdad — roughly where Holland's narrative ends, as the "late antique" world gives way to a recognizably medieval Islamic one.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
     <!-- AD 751 -->
@@ -967,6 +1002,7 @@
         <p>Charlemagne's father deposes the last Merovingian king with papal sanction, founding the Carolingian dynasty.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:7px;"></div>
 
@@ -981,6 +1017,7 @@
         <p>On Pippin's death, the kingdom is divided between Charlemagne and his brother Carloman.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <!-- AD 771 -->
     <div class="beat-year">AD 771</div>
@@ -993,6 +1030,7 @@
         <p>Carloman dies and Charlemagne becomes sole king of the Franks.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <!-- AD 772-804 -->
     <div class="beat-year">AD 772–804</div>
@@ -1005,6 +1043,7 @@
         <p>A brutal, decades-long campaign subdues and forcibly Christianizes the Saxons, including the mass execution at Verden in 782.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <!-- AD 774 -->
     <div class="beat-year">AD 774</div>
@@ -1017,6 +1056,7 @@
         <p>Charlemagne defeats the Lombards in Italy and takes their crown as well as his own.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <!-- AD 778 -->
     <div class="beat-year">AD 778</div>
@@ -1029,6 +1069,7 @@
         <p>Charlemagne's rearguard is ambushed and destroyed in the Pyrenees — later immortalized in the legend of Roland.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <!-- c. 780s-790s -->
     <div class="beat-year">c. 780s–790s</div>
@@ -1041,6 +1082,7 @@
         <p>Charlemagne gathers scholars such as Alcuin of York to his court at Aachen, sparking a revival of learning.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:4px;"></div>
 
@@ -1055,6 +1097,7 @@
         <p>Frankish forces crush the Avar khaganate in the Danube basin, seizing enormous treasure.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:4px;"></div>
 
@@ -1069,6 +1112,7 @@
         <p>Pope Leo III crowns Charlemagne emperor in Rome on Christmas Day — a symbolic revival of the western empire. Wickham treats it as a hinge point for all of Europe; Barbero narrates it as the culmination of one man's life.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <!-- AD 802 -->
     <div class="beat-year">AD 802</div>
@@ -1081,6 +1125,7 @@
         <p>Charlemagne issues capitularies standardizing law and dispatches missi dominici to inspect and enforce his rule.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:4px;"></div>
 
@@ -1095,6 +1140,7 @@
         <p>Charlemagne, anticipating his death, crowns his son Louis as co-emperor to secure the succession.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <!-- AD 814 -->
     <div class="beat-year">AD 814</div>
@@ -1107,6 +1153,7 @@
         <p>Charlemagne dies at his palace in Aachen. His empire outlives him by only a generation, but his reign leaves a lasting template for European kingship.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:12px;"><span class="gap-label">29 years</span></div>
 
@@ -1121,6 +1168,7 @@
         <p>Charlemagne's grandsons divide the Carolingian Empire into three kingdoms, laying the ground for the future shapes of France and Germany.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:8px;"><span class="gap-label">20 years</span></div>
 
@@ -1133,6 +1181,7 @@
         <p>Byzantine missionary brothers convert the Slavs, devising the script that becomes Cyrillic.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
@@ -1149,6 +1198,7 @@
         <p>The German king Otto I is crowned emperor in Rome, founding the line that becomes the Holy Roman Empire.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:6px;"></div>
 
@@ -1161,6 +1211,7 @@
         <p>Byzantium reaches its medieval military peak as Basil II crushes the Bulgarian Empire after decades of campaigning.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
@@ -1177,6 +1228,7 @@
         <p>Wickham's narrative closes on a Europe of feudal lordships and emerging kingdoms, distinct from Byzantium and the Islamic world.</p>
       </div>
     </div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:22px;"><span class="gap-label">54 years</span></div>
 
@@ -1192,6 +1244,7 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
     <div class="time-gap-row" style="height:7px;"></div>
 
@@ -1202,13 +1255,29 @@
         <span class="card-tag tag-byzantium">Byzantium</span>
         <h4>Battle of Manzikert</h4>
         <p>Seljuk Turks crush a Byzantine army and capture the emperor, opening Anatolia to permanent Turkish settlement.</p>
-        <p class="shared-note inline-jump"><a href="#mongols">Why the Seljuks weren't the ones who finished the job ↓</a></p>
+        <p class="shared-note inline-jump"><a href="#kose-dag">Why the Seljuks weren't the ones who finished the job ↓</a></p>
       </div>
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-    <div class="time-gap-row" style="height:53px;"><span class="gap-label">133 years</span></div>
+    <div class="time-gap-row" style="height:36px;"><span class="gap-label">91 years</span></div>
+
+    <!-- c. 1162 -->
+    <div class="beat-year">c. 1162</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Birth of Temüjin</h4>
+        <p>The future Genghis Khan is born to a minor chieftain on the Mongolian steppe. After his father is poisoned, Weatherford recounts, the boy's own clan abandons his family to fend for itself — the outcast childhood from which he later builds a following on loyalty and ability rather than birth.</p>
+      </div>
+    </div>
+
+    <div class="time-gap-row" style="height:17px;"><span class="gap-label">42 years</span></div>
 
     <!-- AD 1204 -->
     <div class="beat-year">AD 1204</div>
@@ -1221,8 +1290,176 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-    <div class="time-gap-row" style="height:23px;"><span class="gap-label">57 years</span></div>
+    <!-- AD 1206 -->
+    <div class="beat-year">AD 1206</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Genghis Khan Proclaimed; Rule by Merit</h4>
+        <p>An assembly of steppe chieftains proclaims Temüjin ruler of all Mongols, unifying rival tribes into a single confederation for the first time. Weatherford's central argument starts here: Genghis Khan breaks apart the old aristocracy of birth and promotes commanders by loyalty, skill, and performance, welding former rivals into the fastest army the world had yet seen.</p>
+      </div>
+    </div>
+
+    <div class="time-gap-row" style="height:5px;"></div>
+
+    <!-- AD 1219-1221 - shared -->
+    <div class="beat-year linked-year">AD 1219–1221</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell islam linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>The Mongols Enter the Islamic World</h4>
+        <p>After the Khwarezmian governor of Otrar executes a Mongol trade caravan, Genghis Khan leads his armies into Transoxiana, sacking Bukhara, Samarkand, and Urgench within two years. Weatherford treats it as the moment the Mongols cross from a steppe power into a world empire — the first time they topple an established Muslim state rather than a nomadic rival.</p>
+        <p class="shared-note">⇄ Same campaign, from the Mongol side — in the Mongol Empire column, at right.</p>
+      </div>
+    </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>The Khwarezmian Campaign</h4>
+        <p>The same campaign from the conquerors' side: Mongol armies annihilate the Khwarezmian Empire's field armies and its great cities in a shockingly short campaign, opening Persia and Central Asia to Mongol rule for the first time.</p>
+        <p class="shared-note">⇄ Same campaign, from the losing empire's side — in the Islamic Caliphate column.</p>
+      </div>
+    </div>
+
+    <!-- AD 1227 -->
+    <div class="beat-year">AD 1227</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Death of Genghis Khan; Division into Khanates</h4>
+        <p>Genghis Khan dies during a campaign against the Tanguts, having named his third son Ögedei as successor over his other sons — another break with strict hereditary custom. His empire is organized into four khanates for his descendants to rule, held together for two more generations by a shared code of law, the Yassa.</p>
+      </div>
+    </div>
+
+    <!-- AD 1234 -->
+    <div class="beat-year">AD 1234</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>The Yam: an Empire-Wide Relay System</h4>
+        <p>Ögedei Khan formalizes the Yam, a network of way-stations spaced a day's ride apart across the empire, stocked with fresh horses and supplies for couriers and officials. Weatherford calls it the ancient world's first genuinely global communication system — Mongol-run infrastructure that could move a message, an envoy, or a merchant thousands of miles in weeks rather than months.</p>
+      </div>
+    </div>
+
+    <!-- AD 1236-1242 - shared -->
+    <div class="beat-year linked-year">AD 1236–1242</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>The Mongols Reach Christian Europe</h4>
+        <p>A Mongol army under Batu Khan crushes Polish and German knights at Legnica and a Hungarian army at Mohi within two days of each other in 1241, then withdraws the following year on the death of Ögedei Khan far to the east — briefly, the closest the Mongol Empire ever comes to the Latin West on this timeline.</p>
+        <p class="shared-note">⇄ Same invasion, from the Mongol side — one column to the right.</p>
+      </div>
+    </div>
+    <div class="lane-cell mongol linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Batu Khan's Invasion of Europe</h4>
+        <p>The Golden Horde, under Genghis Khan's grandson Batu, overruns the Russian principalities and pushes deep into Poland and Hungary before turning back. Weatherford notes the withdrawal was political, not military — the Mongols left undefeated, recalled home to help choose a new Great Khan.</p>
+        <p class="shared-note">⇄ Same invasion, from the receiving end — one column to the left.</p>
+      </div>
+    </div>
+
+    <!-- AD 1243 - shared -->
+    <div class="beat-year linked-year">AD 1243</div>
+    <div class="lane-cell byzantium linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>The Seljuks Broken, a Generation Early</h4>
+        <p>Long before the Ottomans reach Constantinople, a Mongol army shatters the Seljuk Sultanate of Rum at Köse Dağ — the same Turkish state that had crushed Byzantium at Manzikert in 1071. The sultanate survives only as a Mongol vassal and soon fragments into rival Turkish principalities, one of which, an obscure frontier beylik, is the Ottomans.</p>
+        <p class="shared-note">⇄ The other side of this collapse — in the Mongol Empire column, at right.</p>
+      </div>
+    </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol linked">
+      <div class="lane-card" id="kose-dag">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Battle of Köse Dağ</h4>
+        <p>A Mongol force routs the army of the Sultanate of Rum, reducing the Seljuk Turkish state that had dominated Anatolia since Manzikert to a tribute-paying vassal. The vacuum it leaves behind will eventually be filled by a very different Turkish power: the Ottomans.</p>
+        <p class="shared-note">⇄ What this meant for Byzantium — in the Byzantium column, at left.</p>
+      </div>
+    </div>
+
+    <!-- AD 1246 - shared -->
+    <div class="beat-year linked-year">AD 1246</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell west linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>A Franciscan Envoy at the Mongol Court</h4>
+        <p>Pope Innocent IV sends the friar Giovanni da Pian del Carpine across the Mongol relay routes to Karakorum, arriving in time to witness Güyük Khan's enthronement — a direct, if wary, diplomatic contact between the Latin West and the Mongol Empire, made possible by the very road network the Mongols had just built.</p>
+        <p class="shared-note">⇄ The Mongol side of this meeting — one column to the right.</p>
+      </div>
+    </div>
+    <div class="lane-cell mongol linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Receiving a Papal Envoy</h4>
+        <p>Güyük Khan receives a Franciscan friar sent by the pope, one of several outside emissaries to reach the Mongol court along the Yam. Weatherford points to encounters like this as evidence of the empire's practical religious tolerance — Nestorian Christians, Buddhists, Daoists, and Muslims all held real influence at a court that promoted none of them exclusively.</p>
+        <p class="shared-note">⇄ Who sent him, and why — one column to the left.</p>
+      </div>
+    </div>
+
+    <div class="time-gap-row" style="height:5px;"></div>
+
+    <!-- AD 1258 - shared -->
+    <div class="beat-year linked-year">AD 1258</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell islam linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>End of the Abbasid Caliphate</h4>
+        <p>A Mongol army under Hulagu, Genghis Khan's grandson, storms Baghdad and executes the last Abbasid caliph — the dynasty Holland's book leaves ruling from that same city five centuries earlier now sees it destroyed by a power from entirely outside the Roman or Islamic worlds.</p>
+        <p class="shared-note">⇄ The Mongol side of this siege — in the Mongol Empire column, at right.</p>
+      </div>
+    </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol linked">
+      <div class="lane-card" id="baghdad-1258">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Siege of Baghdad</h4>
+        <p>Hulagu's army breaches Baghdad's walls within days and sacks the city, killing much of its population and destroying the Abbasid caliphate that had ruled the Islamic world for five hundred years. Hulagu's own chief wife, Doquz Khatun, was a Church of the East Christian, and some Christian chroniclers of the time cheered the sack as revenge on a caliphate that had long persecuted them.</p>
+        <p class="shared-note">⇄ What was lost — in the Islamic Caliphate column, at left.</p>
+      </div>
+    </div>
+
+    <!-- AD 1260 - shared -->
+    <div class="beat-year linked-year">AD 1260</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell islam linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Battle of Ain Jalut</h4>
+        <p>Two years after Baghdad's fall, the Mamluks of Egypt hand the Mongols their first major open-field defeat at Ain Jalut in Galilee, halting the advance into Syria and Egypt for good — the western limit of Mongol conquest in the Islamic world.</p>
+        <p class="shared-note">⇄ Same battle, from the losing side — in the Mongol Empire column, at right.</p>
+      </div>
+    </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Defeat at Ain Jalut</h4>
+        <p>A Mongol army is defeated by the Mamluks at Ain Jalut, the empire's first serious open-field loss. Weatherford treats it less as proof of fading Mongol strength than as the edge of what a horse-based steppe army could sustainably hold this far from home — the empire outruns its own logistics here.</p>
+        <p class="shared-note">⇄ Who stopped them, and where — in the Islamic Caliphate column, at left.</p>
+      </div>
+    </div>
 
     <!-- AD 1261 -->
     <div class="beat-year">AD 1261</div>
@@ -1235,8 +1472,47 @@
     </div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
 
-    <div class="time-gap-row" style="height:77px;"><span class="gap-label">192 years</span></div>
+    <div class="time-gap-row" style="height:4px;"></div>
+
+    <!-- AD 1271-1294 -->
+    <div class="beat-year">AD 1271–1294</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Kublai Khan and the Pax Mongolica</h4>
+        <p>Genghis Khan's grandson Kublai completes the conquest of Song China and founds the Yuan dynasty, ruling an empire that, together with the other khanates, now spans from Korea to Poland. Weatherford's central claim sits here: under Mongol protection, merchants, diplomats, and ideas move across Eurasia more freely than at any point before the age of European exploration — carrying paper money, printing, and gunpowder westward along the way.</p>
+      </div>
+    </div>
+
+    <div class="time-gap-row" style="height:10px;"><span class="gap-label">24 years</span></div>
+
+    <!-- AD 1295 - shared -->
+    <div class="beat-year linked-year">AD 1295</div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell islam linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>The Ilkhanate Turns to Islam</h4>
+        <p>Ghazan Khan, ruler of the Mongol Ilkhanate in Persia and Iraq, converts to Sunni Islam and makes it the state religion — the same dynasty founded by the sack of Baghdad now presiding over a Muslim state, closing the loop this Mongol lane opened at Baghdad in 1258.</p>
+        <p class="shared-note">⇄ The dynasty's own story — in the Mongol Empire column, at right.</p>
+      </div>
+    </div>
+    <div class="lane-cell"></div>
+    <div class="lane-cell mongol linked">
+      <div class="lane-card">
+        <span class="card-tag tag-weatherford">Weatherford</span>
+        <h4>Ghazan Khan Converts to Islam</h4>
+        <p>The Ilkhanate's ruler adopts Islam as state religion, one of several khanates that, within a few generations, assimilate into the cultures they conquered — Weatherford's coda to his “world system” thesis: Mongol rule reshuffled Eurasia's trade and ideas, and then the Mongols themselves were absorbed by it.</p>
+        <p class="shared-note">⇄ What this meant for the Caliphate's old capital — in the Islamic Caliphate column, at left.</p>
+      </div>
+    </div>
+
+    <div class="time-gap-row" style="height:63px;"><span class="gap-label">158 years</span></div>
 
     <!-- AD 1453 -->
     <div class="beat-year">AD 1453</div>
@@ -1245,42 +1521,18 @@
         <span class="card-tag tag-byzantium">Byzantium</span>
         <h4>Fall of Constantinople</h4>
         <p>Ottoman Sultan Mehmed II takes the city, killing the last emperor, Constantine XI — the close of Norwich's history.</p>
-        <p class="shared-note inline-jump"><a href="#mongols">How the Ottomans got here from Manzikert ↓</a></p>
+        <p class="shared-note inline-jump"><a href="#kose-dag">How the Ottomans got here from Manzikert ↓</a></p>
       </div>
     </div>
+    <div class="lane-cell"></div>
     <div class="lane-cell"></div>
     <div class="lane-cell"></div>
 
   </div>
 </div>
 
-<section class="book-section essay-section" id="mongols">
-  <h2 class="book-title">III. The Mongols — Remaking Byzantium and Islam's World</h2>
-  <p class="book-sub">None of the five books above covers the Mongols either, but their conquests explain two things the timeline above otherwise leaves hanging: why the Seljuk Turks who won at Manzikert in 1071 weren't the ones who eventually took Constantinople, and what actually became of the Abbasid Caliphate after Holland's book ends in 750. Sources linked throughout.</p>
-
-  <h3>From the steppe to two empires' doorsteps</h3>
-  <p>In 1206, a Mongol chieftain named Temüjin was proclaimed Genghis Khan — ruler of all Mongols — by an assembly of steppe nobility, unifying a patchwork of rival tribes into a single fighting confederation for the first time. Within a few decades his sons and grandsons had built the largest contiguous land empire in history, stretching from Korea to Hungary. Two branches of that expansion collided directly with the empires already on this timeline. See <a href="https://en.wikipedia.org/wiki/Genghis_Khan" target="_blank" rel="noopener">Wikipedia's biography of Genghis Khan</a> and <a href="https://www.britannica.com/place/Mongol-empire" target="_blank" rel="noopener">Britannica's overview of the Mongol Empire</a>.</p>
-
-  <h3>Breaking the Seljuks, making room for the Ottomans</h3>
-  <p>At the Battle of Köse Dağ in 1243, a Mongol army routed the forces of the Sultanate of Rum — the Seljuk Turkish state that had held Anatolia since Manzikert — and reduced it to a vassal. The sultanate never really recovered; it splintered over the following decades into a patchwork of small Turkish principalities, or beyliks. One of those beyliks, based in a small frontier territory near the Byzantine border, was the Ottomans. Their eventual rise to reunite Anatolia and take Constantinople in 1453 is, in a real sense, downstream of this battle: the Mongols broke the power that had beaten Byzantium at Manzikert, and a very different Turkish state filled the vacuum two centuries later. See <a href="https://en.wikipedia.org/wiki/Battle_of_K%C3%B6se_Da%C4%9F" target="_blank" rel="noopener">Wikipedia's account of the Battle of Köse Dağ</a>.</p>
-
-  <h3>The end of the Abbasid Caliphate</h3>
-  <p>Further south, Genghis Khan's grandson Hulagu led a Mongol army against Baghdad itself. The siege in early 1258 breached the city's walls within days; the Mongols executed the last Abbasid caliph, al-Musta'sim, and killed a large part of the city's population in the sack that followed. It was the effective end of the Abbasid Caliphate that the Islamic Caliphate lane above leaves off with in 750 — the same dynasty that had moved the capital to Baghdad now saw that capital destroyed, five centuries later, by a power from entirely outside the Islamic or Roman worlds. See <a href="https://en.wikipedia.org/wiki/Siege_of_Baghdad" target="_blank" rel="noopener">Wikipedia's account of the Siege of Baghdad</a>.</p>
-  <p>The Mongols didn't get much further. In 1260, at Ain Jalut in Galilee, the Mamluks of Egypt inflicted the Mongols' first major open-field defeat, stopping their advance into Syria and Egypt for good and setting the western limit of Mongol conquest in the Islamic world. See <a href="https://www.britannica.com/event/Battle-of-Ayn-Jalut" target="_blank" rel="noopener">Britannica's entry on the Battle of Ain Jalut</a>. And in one of history's sharper ironies, the Mongol Ilkhanate that ruled Persia and Iraq after Hulagu converted to Islam itself within a couple of generations — the ruler Ghazan Khan adopted Sunni Islam in 1295 and made it the state religion, so that the dynasty founded by the sack of Baghdad ended up presiding over a Muslim state. See <a href="https://en.wikipedia.org/wiki/Ghazan" target="_blank" rel="noopener">Wikipedia's biography of Ghazan</a>.</p>
-
-  <p class="essay-sources">
-    <strong>Sources:</strong><br>
-    <a href="https://en.wikipedia.org/wiki/Genghis_Khan" target="_blank" rel="noopener">Wikipedia — Genghis Khan</a><br>
-    <a href="https://www.britannica.com/place/Mongol-empire" target="_blank" rel="noopener">Britannica — Mongol Empire</a><br>
-    <a href="https://en.wikipedia.org/wiki/Battle_of_K%C3%B6se_Da%C4%9F" target="_blank" rel="noopener">Wikipedia — Battle of Köse Dağ</a><br>
-    <a href="https://en.wikipedia.org/wiki/Siege_of_Baghdad" target="_blank" rel="noopener">Wikipedia — Siege of Baghdad (1258)</a><br>
-    <a href="https://www.britannica.com/event/Battle-of-Ayn-Jalut" target="_blank" rel="noopener">Britannica — Battle of Ain Jalut</a><br>
-    <a href="https://en.wikipedia.org/wiki/Ghazan" target="_blank" rel="noopener">Wikipedia — Ghazan</a>
-  </p>
-</section>
-
 <section class="book-section essay-section" id="faith-and-empire">
-  <h2 class="book-title">IV. Faith and Empire — How the Churches Diverged</h2>
+  <h2 class="book-title">III. Faith and Empire — How the Churches Diverged</h2>
   <p class="book-sub">None of the five books above is really about the churches themselves, so this section draws on outside sources — linked throughout — to explain why Rome and Constantinople ended up with two different Christianities, what that difference cost each empire, how the rise of Islam then reshaped Byzantine Christianity in particular, and how a third Christian church survived and even reached the Mongol court itself.</p>
 
   <h3>A slow theological rift</h3>
@@ -1304,7 +1556,7 @@
   <h3>A third Christianity: the Church of the East</h3>
   <p>Chalcedonian versus Miaphysite wasn't the only split in eastern Christianity — it wasn't even the oldest. The Church of the East had broken away earlier still, over the Council of Ephesus in 431 rather than Chalcedon in 451, in a dispute that centered on Nestorius, patriarch of Constantinople, and how starkly Christ's human and divine natures should be described. Crucially, this church was based not in Roman territory but in Sasanian Persia, whose emperors — happy to patronize a church Constantinople considered heretical — gave it protection precisely because it had no loyalty to Byzantium. It never had to survive a Byzantine crackdown, because it was never Byzantium's to crack down on. See <a href="https://en.wikipedia.org/wiki/Church_of_the_East" target="_blank" rel="noopener">Wikipedia's entry on the Church of the East</a> and <a href="https://en.wikipedia.org/wiki/Nestorian_schism" target="_blank" rel="noopener">Wikipedia's account of the Nestorian schism</a>.</p>
   <p>Being outside the Roman world let it go further than any other branch of Christianity. Missionaries and merchants carried it east along the Silk Road into Central Asia and India, and by the 7th century into Tang China, where a stone stele erected in 781 records an established Christian community at the imperial court. Later, under Islamic rule, the Church of the East fared comparatively well as a protected minority — the same conquests that permanently split off the Copts and Syriac Orthodox from Constantinople left the Church of the East more or less where it already was, outside the empire, going about business its rivals in Byzantium had never controlled either.</p>
-  <p>Its most striking moment came centuries later, at the Mongol court. Sorghaghtani Beki, a Church of the East Christian from the Kerait tribe, married into the family of Genghis Khan and became mother to four sons who, between them, ruled most of Eurasia: Möngke and Kublai as Great Khans, Hulagu as founder of the Ilkhanate, and Ariq Böke as a rival claimant to the throne. Hulagu's own chief wife, Doquz Khatun, was Christian too, and his sack of Baghdad in 1258 — recounted in the Mongol section above — was cheered on by some Christian chroniclers as revenge on a Muslim power that had long persecuted them. That moment of Christian influence at the summit of the Mongol world didn't last: within a generation the Ilkhanate itself turned to Islam under Ghazan Khan, and Tamerlane's campaigns in the following century devastated the Church of the East's communities across Central Asia and Persia, reducing a church that had once stretched from Iraq to China to the much smaller Assyrian Church of the East that survives today. See <a href="https://en.wikipedia.org/wiki/Sorghaghtani_Beki" target="_blank" rel="noopener">Wikipedia's entry on Sorghaghtani Beki</a>.</p>
+  <p>Its most striking moment came centuries later, at the Mongol court. Sorghaghtani Beki, a Church of the East Christian from the Kerait tribe, married into the family of Genghis Khan and became mother to four sons who, between them, ruled most of Eurasia: Möngke and Kublai as Great Khans, Hulagu as founder of the Ilkhanate, and Ariq Böke as a rival claimant to the throne. Hulagu's own chief wife, Doquz Khatun, was Christian too, and <a href="#baghdad-1258">his sack of Baghdad in 1258</a> was cheered on by some Christian chroniclers as revenge on a Muslim power that had long persecuted them. That moment of Christian influence at the summit of the Mongol world didn't last: within a generation the Ilkhanate itself turned to Islam under Ghazan Khan, and Tamerlane's campaigns in the following century devastated the Church of the East's communities across Central Asia and Persia, reducing a church that had once stretched from Iraq to China to the much smaller Assyrian Church of the East that survives today. See <a href="https://en.wikipedia.org/wiki/Sorghaghtani_Beki" target="_blank" rel="noopener">Wikipedia's entry on Sorghaghtani Beki</a>.</p>
 
   <p class="essay-sources">
     <strong>Sources:</strong><br>
@@ -1330,7 +1582,7 @@
 </section>
 
 <footer>
-  Timeline compiled from Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em>, John Julius Norwich's <em>A Short History of Byzantium</em>, Tom Holland's <em>In the Shadow of the Sword</em>, and Alessandro Barbero's <em>Charlemagne: Father of a Continent</em>, with additional context on the Mongol Empire and church history linked above.
+  Timeline compiled from Mary Beard's <em>SPQR</em>, Chris Wickham's <em>The Inheritance of Rome</em>, John Julius Norwich's <em>A Short History of Byzantium</em>, Tom Holland's <em>In the Shadow of the Sword</em>, Alessandro Barbero's <em>Charlemagne: Father of a Continent</em>, and Jack Weatherford's <em>Genghis Khan and the Making of the Modern World</em>, with additional context on church history linked above.
 </footer>
 
 </body>
